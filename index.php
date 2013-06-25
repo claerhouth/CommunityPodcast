@@ -30,5 +30,5 @@
         
     }
     echo "</table>";
-
+    echo "Recht door de GIT zie";
 ?>
