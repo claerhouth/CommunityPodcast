@@ -23,9 +23,10 @@
     foreach($result as $value)
     {
         echo "<tr><td>";
-        echo $value['name'];
+        echo $value['username'];
         echo "</td><td>";
-
+		echo $value['email'];
+        echo "</td></tr>";
         
     }
     echo "</table>";
