@@ -1,33 +1,26 @@
-
 <?php
-    $host = "eu-cdbr-azure-north-a.cloudapp.net";
-    $user = "b58e714ddd9e63";
-    $pwd = "fd104d27";
-    $db = "CommunityPodcast374";
+require 'vendor/autoload.php';
 
-    try
-    {
-        $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pwd);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    }
-    catch(Exception $e)
-    {
-        echo "We no make mistake";
-    }
-   
-    $sql_select = "SELECT * FROM user";
-    $stmt = $conn->query($sql_select);
-    $result = $stmt->fetchAll();
 
-    echo "<table>";
-    foreach($result as $value)
-    {
-        echo "<tr><td>";
-        echo $value['username'];
-        echo "</td><td>";
-		echo $value['email'];
-        echo "</td></tr>";
-        
-    }
-    echo "</table>";
+$app = new \Slim\Slim(array(
+    'mode' => 'development',
+    'debug' => true,
+    'templates.path' => './templates'
+));
+
+$app->get('/hello/:name', function ($name) {
+    echo "Hello, $name";
+});
+
+$app->post('/login', function () use ($app) {
+    $app->render("logincheck.php");
+});
+
+$app->get('/', function () use ($app) {
+    $app->render('marketingpage.html');
+});
+
+
+$app->run();
+
 ?>
