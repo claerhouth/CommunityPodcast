@@ -15,7 +15,7 @@
         echo "We no make mistake";
     }
    
-    $sql_select = "SELECT * FROM test";
+    $sql_select = "SELECT * FROM user";
     $stmt = $conn->query($sql_select);
     $result = $stmt->fetchAll();
 
@@ -23,12 +23,10 @@
     foreach($result as $value)
     {
         echo "<tr><td>";
-        echo $value['test'];
+        echo $value['name'];
         echo "</td><td>";
-        echo $value['testtext'];
-        echo "</td></tr>";
+
         
     }
     echo "</table>";
-    echo "Recht door de GIT zie";
 ?>
