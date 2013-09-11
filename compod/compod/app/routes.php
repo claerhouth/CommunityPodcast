@@ -53,7 +53,7 @@ Route::get('logout', function() {
 });
 
 Route::get('podcastoverview', array('before' => 'auth', 'do' => function(){
-    $podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id');
+    $podcasts = DB::select('select * from podcasts');
     return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0));
 }));
 
@@ -63,7 +63,7 @@ Route::get('podcastoverviewforuser', array('before' => 'auth', 'do' => function(
 }));
 
 Route::get('episodeoverview', array('before' => 'auth', 'do' => function(){
-    $episodes = DB::select('select date(e.publishdate) episode_date, e.title episode_title, e.description episode_desc, p.name podcast_name from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id ORDER BY publishdate DESC');	
+    $episodes = DB::select('select date(e.publishdate) episode_date, e.title episode_title, e.description episode_desc, p.name podcast_name from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate DESC');	
     return View::make('episodeOverview' ,array("episodes" => $episodes, "own" => 0));
 }));
 
