@@ -1,0 +1,96 @@
+
+<?php $__env->startSection('title'); ?>
+@parent
+- <?php echo Auth::user()->username; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<ol class="breadcrumb">
+<li><a href="/compod/compod/server.php">Home</a></li>
+<li class="active"><?php echo Auth::user()->username; ?></li>
+</ol>
+
+<div class="well">
+  <div class="media">
+      <div class="col-md-1">
+        <img class="media-object" src="../public/img/avatars/<?php echo Auth::user()->username; ?>.png" alt="User avatar">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><?php echo Auth::user()->username; ?></h4>
+        <em>~ <?php echo Auth::user()->tagline; ?></em>
+      </div>
+  </div>
+</div>
+  
+  <div class="row">
+      <div class="col-md-8">                        
+          <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">Available episodes</div>
+   
+              <!-- Table -->
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Date</th>
+                          <th>Episode Title</th>
+                          <th>Podcast</th>
+                          <th>Creator</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php foreach($episodes as $episode): ?>
+                        <tr>
+                          <td><?php echo $episode->episode_date; ?></td>
+                          <td><?php echo $episode->episode_title; ?></td>
+                          <td><?php echo $episode->podcast_name; ?></td>
+                          <td>
+                            <?php if ($episode->episode_isCreator == 1): ?>
+                              Yes
+                            <?php else: ?>
+                              No
+                            <?php endif; ?>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      
+      <div class="col-md-2">                        
+          <div class="panel panel-default">
+              <div class="panel-heading">Subscribed podcasts</div>
+                  <ul class="list-group">
+                      <?php foreach($podcasts as $podcast): ?>
+                          <li class="list-group-item">
+                              <span class="badge"><?php echo $podcast->episode_count; ?></span>
+                                <?php if ($podcast->podcast_isCreator == 1): ?>
+                                  <b>
+                                <?php endif; ?>
+                              <a href="#"><?php echo $podcast->name; ?></a>
+                                  <?php if ($podcast->podcast_isCreator == 1): ?>
+                                   </b>
+                                  <?php endif; ?>
+                          </li>
+                      <?php endforeach; ?>
+                  </ul>
+          </div>
+      </div>
+      
+      <div class="col-md-2">                        
+          <div class="panel panel-default">
+              <div class="panel-heading">Mastered skills</div>
+                  <ul class="list-group">
+                      <?php foreach($skills as $skill): ?>
+                          <li class="list-group-item">
+                              <a href="#"><?php echo $skill->skill; ?></a>
+                          </li>
+                      <?php endforeach; ?>
+                  </ul>
+          </div>
+      </div>
+  </div>
+<?php $__env->stopSection(); ?>
+    
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

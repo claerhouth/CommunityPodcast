@@ -1,0 +1,20 @@
+
+<?php $__env->startSection('title'); ?>
+@parent
+ - Episode Overview
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<h1>Showing all episodes <?php if ($own == 1): ?> created by <?php echo Auth::user()->username; ?> <?php endif; ?></h1>
+<ul>
+    <?php foreach($episodes as $episode): ?>
+    <li class="list-group-item">
+        <span class="badge"><?php echo $episode->podcast_name; ?></span>
+        <b><?php echo $episode->episode_title; ?></b>  <em> - <?php echo $episode->episode_date; ?></em><br>
+        <p><?php echo $episode->episode_desc; ?></p>
+    </li>
+  <?php endforeach; ?>
+</ul>
+<?php $__env->stopSection(); ?>
+    
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

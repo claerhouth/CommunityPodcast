@@ -1,0 +1,459 @@
+[2013-08-26 19:23:31] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'User' not found' in D:\wamp\www\compod\compod\app\controllers\UserController.php:17
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-26 19:55:31] log.ERROR: exception 'BadMethodCallException' with message 'Method route does not exist.' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php:404
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->__call('route', Array)
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->route('home', 'Home')
+#2 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\Facade::__callStatic('route', Array)
+#3 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\HTML::route('home', 'Home')
+#4 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#5 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#6 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#7 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#8 D:\wamp\www\compod\compod\app\storage\views\9ed37656c939add03ff35863e8ef134d(6): Illuminate\View\View->render()
+#9 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#10 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#11 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#12 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#13 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#14 D:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#17 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#22 {main} [] []
+[2013-08-26 19:56:41] log.ERROR: exception 'BadMethodCallException' with message 'Method route does not exist.' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php:404
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->__call('route', Array)
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->route('home', 'Home')
+#2 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\Facade::__callStatic('route', Array)
+#3 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\HTML::route('home', 'Home')
+#4 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#5 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#6 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#7 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#8 D:\wamp\www\compod\compod\app\storage\views\9ed37656c939add03ff35863e8ef134d(5): Illuminate\View\View->render()
+#9 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#10 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#11 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#12 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#13 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#14 D:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#17 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#22 {main} [] []
+[2013-08-26 19:57:18] log.ERROR: exception 'BadMethodCallException' with message 'Method route does not exist.' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php:404
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->__call('route', Array)
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->route('home', 'Home')
+#2 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\Facade::__callStatic('route', Array)
+#3 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\HTML::route('home', 'Home')
+#4 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#5 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#6 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#7 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#8 D:\wamp\www\compod\compod\app\storage\views\9ed37656c939add03ff35863e8ef134d(5): Illuminate\View\View->render()
+#9 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#10 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#11 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#12 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#13 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#14 D:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#17 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#22 {main} [] []
+[2013-08-26 19:57:20] log.ERROR: exception 'BadMethodCallException' with message 'Method route does not exist.' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php:404
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->__call('route', Array)
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->route('home', 'Home')
+#2 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\Facade::__callStatic('route', Array)
+#3 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\HTML::route('home', 'Home')
+#4 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#5 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#6 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#7 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#8 D:\wamp\www\compod\compod\app\storage\views\9ed37656c939add03ff35863e8ef134d(5): Illuminate\View\View->render()
+#9 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#10 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#11 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#12 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#13 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#14 D:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#17 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#22 {main} [] []
+[2013-08-26 19:58:12] log.ERROR: exception 'BadMethodCallException' with message 'Method route does not exist.' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php:404
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->__call('route', Array)
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\HtmlBuilder->route('home', 'Home')
+#2 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\Facade::__callStatic('route', Array)
+#3 D:\wamp\www\compod\compod\app\storage\views\f758a8115df2ef57949a5920ccdd71ca(12): Illuminate\Support\Facades\HTML::route('home', 'Home')
+#4 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#5 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#6 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#7 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#8 D:\wamp\www\compod\compod\app\storage\views\9ed37656c939add03ff35863e8ef134d(5): Illuminate\View\View->render()
+#9 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#10 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#11 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#12 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#13 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#14 D:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#17 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#22 {main} [] []
+[2013-08-26 19:58:44] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 19:59:47] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:01:31] log.ERROR: exception 'ErrorException' with message 'Argument 1 passed to Illuminate\Html\FormBuilder::open() must be an array, string given, called in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php on line 180 and defined' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\FormBuilder.php:100
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Html\FormBuilder.php(100): Illuminate\Exception\Handler->handleError(4096, 'Argument 1 pass...', 'D:\wamp\www\com...', 100, Array)
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\FormBuilder->open('login', 'POST')
+#2 D:\wamp\www\compod\compod\app\storage\views\05a8bd3494fc89d161da39cea1ca012e(10): Illuminate\Support\Facades\Facade::__callStatic('open', Array)
+#3 D:\wamp\www\compod\compod\app\storage\views\05a8bd3494fc89d161da39cea1ca012e(10): Illuminate\Support\Facades\Form::open('login', 'POST')
+#4 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('D:\wamp\www\com...')
+#5 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\wamp\www\com...', Array)
+#6 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('D:\wamp\www\com...', Array)
+#7 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#8 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#9 D:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#10 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#11 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#12 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#16 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#17 {main} [] []
+[2013-08-26 20:03:34] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:04:12] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:04:47] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')', expecting ',' or ';'' in D:\wamp\www\compod\compod\app\storage\views\05a8bd3494fc89d161da39cea1ca012e:13
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-26 20:04:58] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:08:27] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:08:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:08:39] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:08:44] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:10:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:11:30] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:11:33] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:12:19] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:12:20] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:12:22] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:12:24] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:12:50] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:14:08] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:14:43] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:15:13] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:15:33] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:15:38] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:17:17] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:17:43] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:18:02] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:18:13] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:18:16] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:18:37] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:18:44] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:19:25] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:19:58] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:20:09] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:21:26] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
+[2013-08-26 20:25:16] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 D:\wamp\www\compod\compod\server.php(19): require_once('D:\wamp\www\com...')
+#6 {main} [] []
