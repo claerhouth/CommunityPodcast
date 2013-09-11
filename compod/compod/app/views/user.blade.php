@@ -8,7 +8,6 @@
 @section('content')
 <ol class="breadcrumb">
 <li><a href="/compod/compod/server.php">Home</a></li>
-<li><a href="#">Users</a></li>
 <li class="active">{{ Auth::user()->username }}</li>
 </ol>
 
@@ -46,7 +45,13 @@
                           <td>{{$episode->episode_date}}</td>
                           <td>{{$episode->episode_title}}</td>
                           <td>{{$episode->podcast_name}}</td>
-                          <td>Yes</td>
+                          <td>
+                            @if ($episode->episode_isCreator == 1)
+                              Yes
+                            @else
+                              No
+                            @endif
+                          </td>
                         </tr>
                       @endforeach
                   </tbody>
@@ -61,7 +66,13 @@
                       @foreach($podcasts as $podcast)
                           <li class="list-group-item">
                               <span class="badge">{{$podcast->episode_count}}</span>
+                                @if ($podcast->podcast_isCreator == 1)
+                                  <b>
+                                @endif
                               <a href="#">{{$podcast->name}}</a>
+                                  @if ($podcast->podcast_isCreator == 1)
+                                   </b>
+                                  @endif
                           </li>
                       @endforeach
                   </ul>

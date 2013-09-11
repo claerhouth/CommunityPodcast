@@ -53,13 +53,23 @@ Route::get('logout', function() {
 });
 
 Route::get('podcastoverview', array('before' => 'auth', 'do' => function(){
+    $podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id');
+    return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0));
+}));
+
+Route::get('podcastoverviewforuser', array('before' => 'auth', 'do' => function(){
     $podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.creator = 1 AND up.user = '.Auth::user()->id);
-    return View::make('podcastOverview')->with("podcasts", $podcasts);
+    return View::make('podcastOverview' ,array("podcasts" => $podcasts, "own" => 1));
 }));
 
 Route::get('episodeoverview', array('before' => 'auth', 'do' => function(){
+    $episodes = DB::select('select date(e.publishdate) episode_date, e.title episode_title, e.description episode_desc, p.name podcast_name from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id ORDER BY publishdate DESC');	
+    return View::make('episodeOverview' ,array("episodes" => $episodes, "own" => 0));
+}));
+
+Route::get('episodeoverviewforuser', array('before' => 'auth', 'do' => function(){
     $episodes = DB::select('select date(e.publishdate) episode_date, e.title episode_title, e.description episode_desc, p.name podcast_name from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id WHERE c.user = '.Auth::user()->id.' ORDER BY publishdate DESC');	
-    return View::make('episodeOverview')->with("episodes", $episodes);
+    return View::make('episodeOverview', array("episodes" => $episodes, "own" => 1));
 }));
 
 Route::get('', array('before' => 'auth', 'do' => function() {
@@ -67,9 +77,27 @@ Route::get('', array('before' => 'auth', 'do' => function() {
 }));
 
 Route::get('user', array('before' => 'auth', 'do' => function() {
-    $skills = DB::select('select s.* from skills s JOIN user_skill us ON us.skill = s.id WHERE us.active = 1 AND us.user = '.Auth::user()->id);
-    $podcasts = DB::select("select p.name, count(e.id) episode_count from podcasts p JOIN user_podcast up ON up.podcast = p.id JOIN episodes e ON e.podcast = p.id WHERE e.active = 1 AND p.active = 1 AND up.active = 1 AND up.user = ".Auth::user()->id." GROUP BY p.name");
-    //$podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.user = '.Auth::user()->id);
-    $episodes = DB::select('select date(e.publishdate) episode_date, e.title episode_title, p.name podcast_name from episodes e JOIN podcasts p ON p.id = e.podcast JOIN user_podcast up on p.id = up.podcast WHERE up.user = '.Auth::user()->id.' ORDER BY publishdate DESC LIMIT 25');
+    $user_id = Auth::user()->id;
+    $skills = DB::select('select s.* from skills s JOIN user_skill us ON us.skill = s.id WHERE us.active = 1 AND us.user = '.$user_id);
+    $podcasts = DB::select("select p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id JOIN episodes e ON e.podcast = p.id WHERE e.active = 1 AND p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
+    $episodes = DB::select('SELECT 
+			    A.episode_date,
+			    A.episode_title,
+			    A.podcast_name,
+			    IF(c.id is NULL, 0, 1) episode_isCreator
+			    FROM
+				(
+				SELECT 	date(e.publishdate) episode_date, 
+					e.title episode_title, 
+					e.id episode_id,
+					p.name podcast_name
+				FROM episodes e 
+				JOIN podcasts p ON p.id = e.podcast 
+				JOIN user_podcast up on p.id = up.podcast 
+				WHERE up.user = '.$user_id.'
+				ORDER BY publishdate DESC 
+				LIMIT 25
+				) A
+			    LEFT JOIN creator c on c.user = '.$user_id.' and c.episode = A.episode_id');
     return View::make('user', array('skills' => $skills, 'podcasts' => $podcasts, 'episodes' => $episodes));
 }));

@@ -53,8 +53,8 @@
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="/compod/compod/server.php/podcastoverview">My podcasts</a></li>
-                          <li><a href="/compod/compod/server.php/episodeoverview">My episodes</a></li>
+                          <li><a href="/compod/compod/server.php/podcastoverviewforuser">My podcasts</a></li>
+                          <li><a href="/compod/compod/server.php/episodeoverviewforuser">My episodes</a></li>
                           <li class="divider"></li>
                           <li><a href="/compod/compod/server.php/user">Account Settings</a></li>
                           <li><a href="/compod/compod/server.php/logout">Logout</a></li>

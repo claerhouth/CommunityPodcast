@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-<h1>Showing all episodes created by {{ Auth::user()->username }}</h1>
+<h1>Showing all episodes @if ($own == 1) created by {{ Auth::user()->username }} @endif</h1>
 <ul>
     @foreach($episodes as $episode)
     <li class="list-group-item">
