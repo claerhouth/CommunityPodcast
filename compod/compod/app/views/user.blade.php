@@ -14,7 +14,7 @@
   <div class="well">
     <div class="media">
         <div class="col-md-1">
-          <img class="media-object" src="../public/img/avatars/{{ Auth::user()->avatarfile }}" alt="User avatar">
+          <img class="media-object" src="../public/img/avatars/{{ Auth::user()->avatarFile }}" alt="User avatar">
         </div>
         <div class="media-body">
           <h4 class="media-heading">{{ Auth::user()->username }}</h4>
