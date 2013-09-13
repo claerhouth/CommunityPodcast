@@ -11,19 +11,18 @@
 <li class="active">{{ Auth::user()->username }}</li>
 </ol>
 
-<div class="well">
-  <div class="media">
-      <div class="col-md-1">
-        <img class="media-object" src="../public/img/avatars/{{ Auth::user()->username }}.png" alt="User avatar">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{ Auth::user()->username }}</h4>
-        <em>~ {{ Auth::user()->tagline }}</em>
-      </div>
+  <div class="well">
+    <div class="media">
+        <div class="col-md-1">
+          <img class="media-object" src="../public/img/avatars/{{ Auth::user()->avatarfile }}" alt="User avatar">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{ Auth::user()->username }}</h4>
+          <em>~ {{ Auth::user()->tagline }}</em>
+        </div>
+    </div>
   </div>
-</div>
   
-  <div class="row">
       <div class="col-md-8">                        
           <div class="panel panel-default">
               <!-- Default panel contents -->
@@ -91,6 +90,5 @@
                   </ul>
           </div>
       </div>
-  </div>
 @stop
     

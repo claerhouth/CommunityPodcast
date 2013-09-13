@@ -34,7 +34,6 @@ Route::post('login', function() {
     if ( Auth::attempt($userdata) )
     {
         // we are now logged in, go to home
-        //return Redirect::to('home');
 	return Redirect::to('');
     }
     else
@@ -50,6 +49,12 @@ Route::post('login', function() {
 Route::get('logout', function() {
     Auth::logout();
     return Redirect::to('login');
+});
+
+Route::post('signup', 'UserController@insertUser');
+
+Route::get('signup', function(){
+    return View::make('signup');
 });
 
 Route::get('podcastoverview', array('before' => 'auth', 'do' => function(){

@@ -3,6 +3,50 @@
 class UserController extends BaseController {
     
     
+    public function insertUser()
+    {
+	$image = Input::file('image'); // get the file from your input
+	$destinationPath = '/compod/compod/public/img/avatars/';
+	$filename = Input::get('username');
+	$extension =$image->getClientOriginalExtension(); //if you need extension of the file
+	//return $filename.".".$extension;
+	$uploadSuccess = Input::file('image')->move($destinationPath, $filename);
+	
+	$avatarFile = 'default.png';
+	if( $uploadSuccess ) {
+	   $avatarFile = $filename.".".$extension;
+	}
+
+	DB::table('users')->insert(array(
+	    'username'  => Input::get('username'),
+	    'password'  => Hash::make(Input::get('password')),
+	    'active'    => 1,
+	    'email'	=> Input::get('email'),
+	    'tagline'	=> Input::get('tagline'),
+	    'avatarFile' => $avatarFile
+	));
+	
+	$userdata = array(
+	    'username'      => Input::get('username'),
+	    'password'      => Input::get('password'),
+	    'active'        => 1
+	);
+	
+	if ( Auth::attempt($userdata) )
+	{
+	    // we are now logged in, go to home
+	    return Redirect::to('');
+	}
+	else
+	{
+	    // auth failure! lets go back to the login
+	    return Redirect::to('login')
+		->with('login_errors', true);
+	    // pass any error notification you want
+	    // i like to do it this way :)
+	}
+    }
+    
     public function insertTestUser()
     {
         DB::table('users')->insert(array(
