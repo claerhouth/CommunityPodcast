@@ -11,15 +11,15 @@
     @foreach($podcasts as $podcast)
     <li class="list-group-item">
         <div class="row">
-            <div class="span9"><b>{{$podcast->name}}</b> <em> - {{$podcast->description}}</em></div>
+            <div class="span10"><b>{{$podcast->name}}</b> <em> - {{$podcast->description}}</em></div>
             
             @if ($own == 0)
-            <div class="span2">
+            <div class="span1">
                 @if (!$podcast->creator)
                     @if ($podcast->isSubscribed)
-                        <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button class="btn btn-danger">Unsubscribe</button></a>
+                        <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button></a>
                     @else
-                        <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success">Subscribe</button></a>
+                        <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></button></a>
                     @endif
                 @else
                     <p class="text-info">creator</p>
