@@ -39,6 +39,9 @@ Route::get('user', array('before' => 'auth', 'uses' => 'UserController@showMyUse
 //PODCASTS
 Route::get('podcastoverview', array('before' => 'auth', 'uses' =>'PodcastController@showAllPodcast'));
 Route::get('podcastoverviewforuser', array('before' => 'auth', 'uses' =>'PodcastController@showMyPodcast'));
+Route::get('subscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@subscribe'));
+Route::get('unsubscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@unsubscribe'));
+
 
 //EPISODES
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
