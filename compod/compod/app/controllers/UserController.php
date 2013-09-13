@@ -6,7 +6,7 @@ class UserController extends BaseController {
     public function insertUser()
     {
 	$image = Input::file('image'); // get the file from your input
-	$destinationPath = '/compod/compod/public/img/avatars/';
+	$destinationPath = '/compod/compod/public/img/avatars';
 	$filename = Input::get('username');
 	$extension =$image->getClientOriginalExtension(); //if you need extension of the file
 	//return $filename.".".$extension;
