@@ -7,7 +7,7 @@
 
 @section('content')
             
-{{ Form::open() }}
+{{ Form::open(array('action' => 'UserController@loginUser')) }}
 
     <div class="row">
 	<div class="col-md-6 col-md-offset-3">

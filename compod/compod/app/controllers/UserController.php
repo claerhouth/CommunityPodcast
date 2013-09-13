@@ -6,14 +6,18 @@ class UserController extends BaseController {
     public function insertUser()
     {
 	$image = Input::file('image'); // get the file from your input
-	$destinationPath = 'public/img/avatars';
-	$filename = Input::get('username');
-	$extension =$image->getClientOriginalExtension(); //if you need extension of the file
-	$uploadSuccess = Input::file('image')->move($destinationPath, $filename.".".$extension);
-	
 	$avatarFile = 'default.png';
-	if( $uploadSuccess ) {;
-	   $avatarFile = $filename.".".$extension;
+	
+	if($image){
+	    $destinationPath = 'public/img/avatars';
+	    $filename = Input::get('username');
+	    $extension =$image->getClientOriginalExtension(); //if you need extension of the file
+	    $uploadSuccess = Input::file('image')->move($destinationPath, $filename.".".$extension);
+	    
+	    
+	    if( $uploadSuccess ) {;
+	       $avatarFile = $filename.".".$extension;
+	    }    
 	}
 	
 	DB::table('users')->insert(array(
@@ -25,6 +29,11 @@ class UserController extends BaseController {
 	    'avatarFile' => $avatarFile
 	));
 	
+	return $this->loginUser();
+    }
+    
+    public function loginUser()
+    {
 	$userdata = array(
 	    'username'      => Input::get('username'),
 	    'password'      => Input::get('password'),
@@ -46,102 +55,31 @@ class UserController extends BaseController {
 	}
     }
     
-    public function insertTestUser()
+    public function showMyUser()
     {
-        DB::table('users')->insert(array(
-	    'username'  => 'jarres',
-	    'password'  => Hash::make('test'),
-	    'active'    => 1,
-	    'email'	=> 'hcl604@gmail.com'
-	));
-
-        return "User created";
-    }
-    
-    public function makeTestPodcastCreators()
-    {
-	DB::table('user_podcast')->insert(array(
-	    'user'  => '42',
-	    'podcast'  => 52,
-	    'creator'    => 1
-	));
-	
-	DB::table('user_podcast')->insert(array(
-	    'user'  => '52',
-	    'podcast'  => 62,
-	    'creator'    => 1
-	));
-	
-	DB::table('user_podcast')->insert(array(
-	    'user'  => '62',
-	    'podcast'  => 72,
-	    'creator'    => 1
-	));
-	
-	DB::table('user_podcast')->insert(array(
-	    'user'  => '62',
-	    'podcast'  => 82,
-	    'creator'    => 1
-	));
-	
-	DB::table('user_podcast')->insert(array(
-	    'user'  => '52',
-	    'podcast'  => 92,
-	    'creator'    => 1
-	));
-	
-	DB::table('user_podcast')->insert(array(
-	    'user'  => '42',
-	    'podcast'  => 102,
-	    'creator'    => 1
-	));
-
-        return "Creators simulated";
-    }
-    
-    public function makeTestSkillOwners()
-    {
-	DB::table('user_skill')->insert(array(
-	    'user'  => 42,
-	    'skill'  => 2
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 42,
-	    'skill'  => 22
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 42,
-	    'skill'  => 32
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 52,
-	    'skill'  => 2
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 52,
-	    'skill'  => 12
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 52,
-	    'skill'  => 22
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 62,
-	    'skill'  => 2
-	));
-	
-	DB::table('user_skill')->insert(array(
-	    'user'  => 62,
-	    'skill'  => 22
-	));
-
-        return "Skill owners simulated";
+	$user_id = Auth::user()->id;
+	$skills = DB::select('select s.* from skills s JOIN user_skill us ON us.skill = s.id WHERE us.active = 1 AND us.user = '.$user_id);
+	$podcasts = DB::select("select p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id JOIN episodes e ON e.podcast = p.id WHERE e.active = 1 AND p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
+	$episodes = DB::select('SELECT 
+				A.episode_date,
+				A.episode_title,
+				A.podcast_name,
+				IF(c.id is NULL, 0, 1) episode_isCreator
+				FROM
+				    (
+				    SELECT 	date(e.publishdate) episode_date, 
+					    e.title episode_title, 
+					    e.id episode_id,
+					    p.name podcast_name
+				    FROM episodes e 
+				    JOIN podcasts p ON p.id = e.podcast 
+				    JOIN user_podcast up on p.id = up.podcast 
+				    WHERE up.user = '.$user_id.'
+				    ORDER BY publishdate DESC 
+				    LIMIT 25
+				    ) A
+				LEFT JOIN creator c on c.user = '.$user_id.' and c.episode = A.episode_id');
+	return View::make('user', array('skills' => $skills, 'podcasts' => $podcasts, 'episodes' => $episodes));
     }
 }
 
