@@ -13,13 +13,19 @@
         <div class="row">
             <div class="span9"><b>{{$podcast->name}}</b> <em> - {{$podcast->description}}</em></div>
             
+            @if ($own == 0)
             <div class="span2">
-                @if ($podcast->isSubscribed)
-                    <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button class="btn btn-danger">Unsubscribe</button></a>
+                @if (!$podcast->creator)
+                    @if ($podcast->isSubscribed)
+                        <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button class="btn btn-danger">Unsubscribe</button></a>
+                    @else
+                        <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success">Subscribe</button></a>
+                    @endif
                 @else
-                    <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success">Subscribe</button></a>
+                    <p class="text-info">creator</p>
                 @endif
             </div>
+            @endif
         </div>
     </li>
   @endforeach

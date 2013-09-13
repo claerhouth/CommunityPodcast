@@ -9,7 +9,8 @@ class PodcastController extends BaseController {
 			        p.id,
 				p.name,
 				p.description,
-				IF(up.id IS NULL, 0, 1) isSubscribed 
+				IF(up.id IS NULL, 0, 1) isSubscribed,
+				up.creator
 				from podcasts p
 				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1");
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0));
