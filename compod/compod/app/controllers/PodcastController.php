@@ -4,7 +4,6 @@ class PodcastController extends BaseController {
     
     public function showAllPodcast()
     {
-    	
 	$podcasts = DB::select("select
 			        p.id,
 				p.name,
@@ -14,6 +13,22 @@ class PodcastController extends BaseController {
 				from podcasts p
 				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1");
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0));
+    }
+    
+    public function insertPodcast(){
+	$podcastId = DB::table('podcasts')->insertGetId(array(
+	    'name'  => Input::get('name'),
+	    'description'  => Input::get('description'),
+	    'inviteOnly'    => 1
+	));
+	
+	DB::table('user_podcast')->insert(array(
+	    'user'  => Auth::user()->id,
+	    'podcast' => $podcastId,
+	    'creator' => 1
+	));
+	
+	return $this->showMyPodcast();
     }
     
     public function showMyPodcast()

@@ -12,6 +12,7 @@
         {{ HTML::style('../public/css/bootstrap.css') }}
         {{ HTML::style('../public/css/bootstrap-responsive.css') }}
         {{ HTML::style('../public/css/bootstrap-theme.css') }}
+        {{ HTML::style('../public/skin/jplayer.blue.monday.css') }}
 
         <style>
         @section('styles')
@@ -20,6 +21,16 @@
             }
         @show
         </style>
+        
+        <!-- Script imports are placed here -->
+        {{ HTML::script('../public/js/jquery-1.10.2.min.js') }}
+        {{ HTML::script('../public/js/bootstrap.min.js') }}
+        {{ HTML::script('../public/js/jquery.jplayer.min.js') }}
+        
+        <!-- Scripts section can be used in blade templates -->
+        <script type="text/javascript">
+        @yield('scripts')
+        </script>
     </head>
 
     <body>
@@ -80,10 +91,5 @@
                 <p>&copy; Idipsum 2013</p>
             </footer>
         </div>
-        
-        <!-- Scripts are placed here -->
-        <!-- Scripts are placed here -->
-        {{ HTML::script('../public/js/jquery-1.10.2.min.js') }}
-        {{ HTML::script('../public/js/bootstrap.min.js') }}
     </body>
 </html>

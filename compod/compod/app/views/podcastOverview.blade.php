@@ -7,6 +7,7 @@
 
 @section('content')
 <h1>Showing all podcasts @if ($own == 1) created by {{ Auth::user()->username }} @endif</h1>
+<a href="/compod/compod/server.php/addPodcast"><button type="button" class="btn btn-primary">Add a podcast</button></a><br/><br/>
 <ul>
     @foreach($podcasts as $podcast)
     <li class="list-group-item">

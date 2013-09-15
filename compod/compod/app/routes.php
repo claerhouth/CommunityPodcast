@@ -29,6 +29,14 @@ Route::get('', array('before' => 'auth', 'do' => function() {
     return View::make('home');
 }));
 
+Route::get('player', function() {
+    return View::make('playertest');
+});
+
+Route::get('addPodcast', array('before' => 'auth', 'do' => function() {
+    return View::make('addPodcast');	
+}));
+
 //___ACTIONS
 
 //USERS
@@ -41,7 +49,7 @@ Route::get('podcastoverview', array('before' => 'auth', 'uses' =>'PodcastControl
 Route::get('podcastoverviewforuser', array('before' => 'auth', 'uses' =>'PodcastController@showMyPodcast'));
 Route::get('subscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@subscribe'));
 Route::get('unsubscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@unsubscribe'));
-
+Route::post('addPodcast', 'PodcastController@insertPodcast');
 
 //EPISODES
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
