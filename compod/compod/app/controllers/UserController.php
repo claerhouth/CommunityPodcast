@@ -59,7 +59,7 @@ class UserController extends BaseController {
     {
 	$user_id = Auth::user()->id;
 	$skills = DB::select('select s.* from skills s JOIN user_skill us ON us.skill = s.id WHERE us.active = 1 AND us.user = '.$user_id);
-	$podcasts = DB::select("select p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id JOIN episodes e ON e.podcast = p.id WHERE e.active = 1 AND p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
+	$podcasts = DB::select("select p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id LEFT JOIN episodes e ON e.podcast = p.id and e.active = 1 WHERE p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
 	$episodes = DB::select('SELECT 
 				A.episode_date,
 				A.episode_title,
