@@ -37,6 +37,7 @@ Route::get('addPodcast', array('before' => 'auth', 'do' => function() {
     return View::make('addPodcast');	
 }));
 
+
 //___ACTIONS
 
 //USERS
@@ -54,6 +55,7 @@ Route::post('addPodcast', 'PodcastController@insertPodcast');
 //EPISODES
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
 Route::get('episodeoverviewforuser', array('before' => 'auth', 'uses' =>'EpisodeController@showMyEpisodes'));
+Route::get('episode/{id?}', array('before' => 'auth', 'uses' =>'EpisodeController@showEpisodeDetail'));
 
 //DEFAULT DATA
 Route::get('insertuser', 'DefaultDataController@insertTestUser');

@@ -11,7 +11,7 @@
     @foreach($episodes as $episode)
     <li class="list-group-item">
         <span class="badge">{{$episode->podcast_name}}</span>
-        <b>{{$episode->episode_title}}</b>  <em> - {{$episode->episode_date}}</em><br>
+        <a href="/compod/compod/server.php/episode/{{$episode->episode_id}}"><b>{{$episode->episode_title}}</b></a>  <em> - {{$episode->episode_date}}</em><br>
         <p>{{$episode->episode_desc}}</p>
     </li>
   @endforeach
