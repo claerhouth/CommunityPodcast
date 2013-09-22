@@ -66,6 +66,13 @@ class PodcastController extends BaseController {
 	}
 	return $result;
     }
+    
+    public function showPodcastDetail($id){
+	$podcastDetail = DB::select("select * from podcasts where id =".$id);
+	$episodes = DB::select("select * from episodes where podcast=".$id);
+	
+	return View::make('podcast',array('podcast' => $podcastDetail[0], 'episodes' => $episodes));
+    }
 }
 
 ?>

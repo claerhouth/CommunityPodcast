@@ -12,7 +12,7 @@
     @foreach($podcasts as $podcast)
     <li class="list-group-item">
         <div class="row">
-            <div class="span10"><b>{{$podcast->name}}</b> <em> - {{$podcast->description}}</em></div>
+            <div class="span10"><a href="/compod/compod/server.php/podcast/{{$podcast->id}}"><b>{{$podcast->name}}</b></a> <em> - {{$podcast->description}}</em></div>
             
             @if ($own == 0)
             <div class="span1">
