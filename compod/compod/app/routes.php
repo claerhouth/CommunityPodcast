@@ -57,6 +57,8 @@ Route::get('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastControlle
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
 Route::get('episodeoverviewforuser', array('before' => 'auth', 'uses' =>'EpisodeController@showMyEpisodes'));
 Route::get('episode/{id?}', array('before' => 'auth', 'uses' =>'EpisodeController@showEpisodeDetail'));
+Route::get('addEpisode/{podcast_id?}', array('before' => 'auth', 'uses' =>'EpisodeController@addEpisode'));
+Route::post('addEpisode', 'EpisodeController@insertEpisode');
 
 //DEFAULT DATA
 Route::get('insertuser', 'DefaultDataController@insertTestUser');

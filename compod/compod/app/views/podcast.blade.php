@@ -9,7 +9,21 @@
 
 <h1>{{$podcast->name}}</h1>
 <div><em>{{$podcast->description}}</em></div>
+<hr>
+@if (sizeof($episodes) == 0)
 
+<div class="row">
+  <div class="col-md-12">It appears there currently aren't any episodes for this podcast.</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+          Why don't you start things up and
+          <a href="/compod/compod/server.php/addEpisode/{{$podcast->id}}"><button type="button" class="btn btn-primary btn-xs">Upload an episode</button></a>  
+  </div>
+</div>
+
+@else
+<a href="/compod/compod/server.php/addEpisode/{{$podcast->id}}"><button type="button" class="btn btn-primary">Upload an episode</button></a>  
 <div class="col-md-8">                        
           <div class="panel panel-default">
               <!-- Default panel contents -->
@@ -34,5 +48,6 @@
               </table>
           </div>
       </div>
+@endif
 
 @stop

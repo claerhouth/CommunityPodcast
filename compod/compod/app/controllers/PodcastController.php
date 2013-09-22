@@ -69,7 +69,7 @@ class PodcastController extends BaseController {
     
     public function showPodcastDetail($id){
 	$podcastDetail = DB::select("select * from podcasts where id =".$id);
-	$episodes = DB::select("select * from episodes where podcast=".$id);
+	$episodes = DB::select("select * from episodes where podcast=".$id.' ORDER by publishdate DESC');
 	
 	return View::make('podcast',array('podcast' => $podcastDetail[0], 'episodes' => $episodes));
     }
