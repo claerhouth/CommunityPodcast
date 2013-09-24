@@ -22,7 +22,11 @@
 @section('content')
 <div class="row">
     <h2>{{$episode->title}}</h2>
-    <div><em>{{$episode->publishdate}}</em></div><br/>
+    <div><em>{{$episode->publishdate}} by
+        @foreach($creators as $creator)
+            - {{$creator->username}}
+        @endforeach
+    </em></div><br/>
     <div>{{$episode->description}}</div><br/>
 </div>
 <div class="row">

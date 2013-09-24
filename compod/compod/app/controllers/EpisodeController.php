@@ -16,7 +16,11 @@ class EpisodeController extends BaseController {
     public function showEpisodeDetail($id)
     {
 	$episode = DB::select('select * from episodes where id = '.$id);
-	return View::make('episode', array("episode" => $episode[0]));
+	$users = DB::select('select u.username
+			    from users u
+			    join creator c on u.id = c.user
+			    where c.episode ='.$id);
+	return View::make('episode', array("episode" => $episode[0], "creators" => $users));
     }
     
     public function addEpisode($podcast_id)
