@@ -58,7 +58,7 @@ class UserController extends BaseController {
     public function showMyUser()
     {
 	$user_id = Auth::user()->id;
-	$skills = DB::select('select s.* from skills s JOIN user_skill us ON us.skill = s.id WHERE us.active = 1 AND us.user = '.$user_id);
+	$skills = $this->getAllSkills();
 	$podcasts = DB::select("select p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id LEFT JOIN episodes e ON e.podcast = p.id and e.active = 1 WHERE p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
 	$episodes = DB::select('SELECT 
 				A.episode_date,
@@ -81,6 +81,42 @@ class UserController extends BaseController {
 				LEFT JOIN creator c on c.user = '.$user_id.' and c.episode = A.episode_id');
 	return View::make('user', array('skills' => $skills, 'podcasts' => $podcasts, 'episodes' => $episodes));
     }
+    
+    public function getAllSkills()
+    {
+	return DB::select('select s.*, if(us.id is null, 0,1) is_mastered from skills s LEFT JOIN user_skill us ON us.skill = s.id AND us.active = 1 AND us.user = '.Auth::user()->id);
+    }
+    
+    public function saveSkills()
+    {
+	$skills = $this->getAllSkills();
+	$user_id = Auth::user()->id;
+	$debug = "";
+	foreach($skills as $skill){
+	    $mastered = false;
+	    if(Input::get($skill->skill) == $skill->id){
+		$mastered = true;
+	    }
+	    
+	    if($mastered != $skill->is_mastered){ //only try update if value has changed
+		$result = DB::table('user_skill')
+			->where('user', $user_id)
+			->where('skill', $skill->id)
+			->update(array('active' => $mastered));
+			
+		if(!$result && $mastered){ //if update fails, that means there isn't a row yet so we insert one, but only if the skill is mastered
+		    $result = DB::table('user_skill')->insert(array(
+			'user'  => $user_id,
+			'skill'  => $skill->id,
+			'active'    => 1
+		    ));
+		}
+	    }
+	}
+	
+	return $this->showMyUser();
+    }
+
 }
 
 ?>

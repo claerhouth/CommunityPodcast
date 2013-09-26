@@ -16,10 +16,29 @@ class PodcastController extends BaseController {
     }
     
     public function insertPodcast(){
+	$image = Input::file('image'); // get the file from your input
+	$iconFile = 'default.png';
+	
+	if($image){
+	    $destinationPath = 'public/img/podcastlogos';
+	    
+	    $rand = str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT);
+	    $shrtName = substr(trim(Input::get('name')),0,4);
+	    $filename = Auth::user()->id."_".$shrtName."_".$rand;
+	    
+	    $extension =$image->getClientOriginalExtension(); //if you need extension of the file
+	    $uploadSuccess = Input::file('image')->move($destinationPath, $filename.".".$extension);
+
+	    if( $uploadSuccess ) {;
+	       $iconFile = $filename.".".$extension;
+	    }    
+	}
+	
 	$podcastId = DB::table('podcasts')->insertGetId(array(
 	    'name'  => Input::get('name'),
 	    'description'  => Input::get('description'),
-	    'inviteOnly'    => 1
+	    'inviteOnly'    => 1,
+	    'iconFile' => $iconFile
 	));
 	
 	DB::table('user_podcast')->insert(array(

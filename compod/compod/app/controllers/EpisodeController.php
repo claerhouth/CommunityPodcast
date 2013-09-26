@@ -34,11 +34,11 @@ class EpisodeController extends BaseController {
 	$filename = "";
 	$podcast_id = Input::get('podcastId');
 	
+	$rand = str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT);
+	$shrtName = substr(trim(Input::get('title')),0,4);
+	    
 	if($file){
 	    $destinationPath = 'public/mp3';
-	    
-	    $rand = str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT);
-	    $shrtName = substr(trim(Input::get('title')),0,4);
 	    
 	    $filename = $podcast_id."_".$shrtName."_".$rand.".mp3";
 	    $uploadSuccess = Input::file('file')->move($destinationPath, $filename);
@@ -51,12 +51,28 @@ class EpisodeController extends BaseController {
 	    return "The file you used is not OK";
 	}
 	
+	$image = Input::file('image'); // get the file from your input
+	$iconFile = 'default.png';
+	
+	if($image){
+	    $destinationPath = 'public/img/episodelogos';
+	    
+	    $imagename = $podcast_id."_".$shrtName."_".$rand;
+	    $extension =$image->getClientOriginalExtension(); //if you need extension of the file
+	    $uploadSuccess = Input::file('image')->move($destinationPath, $imagename.".".$extension);
+
+	    if( $uploadSuccess ) {;
+	       $iconFile = $imagename.".".$extension;
+	    }    
+	}
+	
 	$newId = DB::table('episodes')->insertGetId(array(
 	    'title'  => Input::get('title'),
 	    'description'  => Input::get('description'),
 	    'file' => $filename,
 	    'publishdate' => date("Y-m-d H:i:s"),
-	    'podcast' => $podcast_id
+	    'podcast' => $podcast_id,
+	    'iconFile' => $iconFile
 	));
 	
 	DB::table('creator')->insert(array(

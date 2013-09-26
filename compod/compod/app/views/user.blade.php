@@ -82,11 +82,16 @@
           <div class="panel panel-default">
               <div class="panel-heading">Mastered skills</div>
                   <ul class="list-group">
+                      {{ Form::open(array('action' => 'UserController@saveSkills')) }}
                       @foreach($skills as $skill)
                           <li class="list-group-item">
-                              <a href="#">{{$skill->skill}}</a>
+                              {{ Form::checkbox($skill->skill, $skill->id, $skill->is_mastered) }} {{$skill->skill}}
                           </li>
                       @endforeach
+                      <li class="list-group-item">
+                        {{ Form::submit('Save', array('class' => 'btn btn-default btn-xs')) }}
+                      </li>
+                      {{ Form::close() }}
                   </ul>
           </div>
       </div>

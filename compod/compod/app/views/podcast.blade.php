@@ -7,16 +7,22 @@
 
 @section('content')
 
-<h1>{{$podcast->name}}</h1>
-<div><em>{{$podcast->description}}</em></div>
-<hr>
+<div class="well">
+  <div class="media">
+      <div class="col-md-1">
+        <img class="media-object" src="../../public/img/podcastlogos/{{ $podcast->iconFile }}" alt="User avatar" width="64" height="64">
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading">{{ $podcast->name }}</h3>
+        <em>{{$podcast->description}}</em>
+      </div>
+  </div>
+</div>
+
 @if (sizeof($episodes) == 0)
 
-<div class="row">
-  <div class="col-md-12">It appears there currently aren't any episodes for this podcast.</div>
-</div>
-<div class="row">
-  <div class="col-md-12">
+  <div>It appears there currently aren't any episodes for this podcast.</div>
+  <div>
           Why don't you start things up and
           <a href="/compod/compod/server.php/addEpisode/{{$podcast->id}}"><button type="button" class="btn btn-primary btn-xs">Upload an episode</button></a>  
   </div>

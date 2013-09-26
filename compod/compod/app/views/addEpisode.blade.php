@@ -13,7 +13,8 @@
 {{ Form::open(array('action' => 'EpisodeController@insertEpisode', 'files'=> true)) }}
     {{ Form::text('title', Input::old('title'), array('class' => 'form-control', 'placeholder' => 'Title')) }}<br>
     {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control', 'placeholder' => 'Description')) }}<br>
-    {{ Form::file('file'); }} <em>Only mp3's are supported.</em><br><br>
+    Audio file : {{ Form::file('file'); }} <em>Only mp3's are supported.</em><br><br>
+    Icon : {{ Form::file('image'); }} <em>Best result with 64x64 pictures.</em><br><br>
     {{ Form::hidden('podcastId',$podcast->id)}}
     {{ Form::submit('Upload episode', array('class' => 'btn btn-default')) }}
 {{ Form::close() }}
