@@ -59,6 +59,11 @@ class EpisodeController extends BaseController {
 	    'podcast' => $podcast_id
 	));
 	
+	DB::table('creator')->insert(array(
+	    'episode' => $newId,
+	    'user' => Auth::user()->id
+	));
+	
 	return Redirect::to('podcast/'.$podcast_id);
     }
 }
