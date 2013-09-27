@@ -4,7 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"require": {
 		"laravel/framework": "4.0.*",
-		"twitter/bootstrap": "*"
+		"twitter/bootstrap": "*",
+		"apipack/eden": "dev-master",
+		"facebook/php-sdk": "master",
+		"laravel/curl": "master"
 	},
 	"autoload": {
 		"classmap": [

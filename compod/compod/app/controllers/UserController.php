@@ -2,6 +2,7 @@
 
 class UserController extends BaseController {
     
+
     
     public function insertUser()
     {
@@ -53,6 +54,68 @@ class UserController extends BaseController {
 	    // pass any error notification you want
 	    // i like to do it this way :)
 	}
+    }
+    
+    public function loginFacebook()
+    {
+	$auth = Facebook::auth();
+	
+	
+
+	//$appId = '638413639522476';
+	//$redirecturi = 'http://localhost:81/compod/compod/server.php/loginFacebook';
+	//$secret = '3c45804cc85d4c5e98c76c4aa56d850d';
+	
+	if(!isset($_GET['code']) && !isset($_SESSION['token']))
+	{
+	    //$params = array('scope' => 'email', 'redirect_url' => 'http://localhost:81/compod/compod/server.php/loginFacebook');
+	    //$login = "https://www.facebook.com/dialog/oauth?client_id={$appId}&redirect_uri={$redirecturi}";
+	    
+	    $login = $auth->getLoginUrl();
+	    return Redirect::to($login);
+	}
+	elseif(isset($_GET['code']))
+	{
+	    $code = $_GET['code'];
+	   
+	    //$access = "https://graph.facebook.com/oauth/access_token?client_id={$appId}&redirect_uri={$redirecturi}&client_secret={$secret}&code={$code}";
+	    //$access = $curl->simple_get($access);
+	    $access = $auth->getAccess($code);
+	    	    
+	    $_SESSION['access_token'] = $access['access_token'];
+	    
+	    $graph = Facebook::graph($_SESSION['access_token']);
+	    $userfacebook = $graph->getUser();
+	    $user = User::where('username', '=', $userfacebook['username'])->first();
+	    $userdata = array('username' =>  $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
+	    
+	    if($user == null)
+	    {
+		DB::table('users')->insert(array(
+		'username'  => $userfacebook['username'],
+		'password'  => Hash::make($userfacebook['id']),
+		'active'    => 1,
+		'email'	=> $userfacebook['email'],
+		'tagline'	=> 'I love communitypodcast'
+		));
+		
+		$userdata = array('username' => $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
+	    }
+	    
+	    if ( Auth::attempt($userdata) )
+	    {
+	        // we are now logged in, go to home
+	        return Redirect::to('');
+	    }
+	    else
+	    {
+	    // auth failure! lets go back to the login
+	        return Redirect::to('login')
+			->with('login_errors', true);
+	    // pass any error notification you want
+	    // i like to do it this way :)
+	    }
+	}    
     }
     
     public function showMyUser()
