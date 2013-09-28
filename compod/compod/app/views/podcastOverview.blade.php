@@ -6,8 +6,25 @@
 @stop
 
 @section('content')
+
+@if ($search != "")
+<h1>Showing podcasts for {{$search}}</h1>
+@else
 <h1>Showing all podcasts @if ($own == 1) created by {{ Auth::user()->username }} @endif</h1>
-<a href="/compod/compod/server.php/addPodcast"><button type="button" class="btn btn-primary">Add a podcast</button></a><br/><br/>
+@endif
+
+@if (sizeof($podcasts) == 0 && $search != "")
+
+  <div>It appears there currently aren't any podcasts about {{$search}}.</div>
+  <div>
+          Why don't you start things up and
+          <a href="/compod/compod/server.php/addPodcast"><button type="button" class="btn btn-primary btn-xs">Create one</button></a>  
+  </div>
+@else
+    <a href="/compod/compod/server.php/addPodcast"><button type="button" class="btn btn-primary">Add a podcast</button></a><br/><br/>
+@endif
+
+
 <ul>
     @foreach($podcasts as $podcast)
     <li class="list-group-item">

@@ -59,6 +59,14 @@
                   
                 </li>
               </ul>
+              @if (Auth::check())
+              {{ Form::open(array('class'=>'navbar-form navbar-left','url' => 'searchpodcast', 'method' => 'post')) }}
+                <div class="form-group">
+                  {{ Form::text('search', Input::old('searchinput'), array('class' => 'form-control', 'placeholder' => 'Search podcast')) }}
+                </div>
+                {{ Form::submit('Search', array('class' => 'btn btn-default')) }}
+              {{ Form::close() }}
+              @endif
               <ul class="nav navbar-nav navbar-right">
                   @if (Auth::check())
                   <li class="dropdown">

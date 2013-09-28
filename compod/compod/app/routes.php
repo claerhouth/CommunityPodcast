@@ -55,6 +55,7 @@ Route::get('subscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastControl
 Route::get('unsubscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@unsubscribe'));
 Route::post('addPodcast', 'PodcastController@insertPodcast');
 Route::get('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@showPodcastDetail'));
+Route::post('searchpodcast', array('before' => 'auth', 'uses' =>'PodcastController@searchPodcast'));
 
 //EPISODES
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
