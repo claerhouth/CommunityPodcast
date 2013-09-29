@@ -88,6 +88,11 @@ class UserController extends BaseController {
     {
 	$auth = Facebook::auth();
 
+	if(isset($_GET['error']))
+	{
+	    return Redirect::to('login');
+	}
+	
 	if(!isset($_GET['code']) && !isset($_SESSION['token']))
 	{
 	    //$params = array('scope' => 'email', 'redirect_url' => 'http://localhost:81/compod/compod/server.php/loginFacebook');
@@ -98,10 +103,7 @@ class UserController extends BaseController {
 	}
 	elseif(isset($_GET['code']))
 	{
-	    if(isset($_GET['error']))
-	    {
-		return Redirect::to('login');
-	    }
+
 	    $code = $_GET['code'];
 	   
 	    //$access = "https://graph.facebook.com/oauth/access_token?client_id={$appId}&redirect_uri={$redirecturi}&client_secret={$secret}&code={$code}";
