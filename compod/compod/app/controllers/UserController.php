@@ -59,13 +59,7 @@ class UserController extends BaseController {
     public function loginFacebook()
     {
 	$auth = Facebook::auth();
-	
-	
 
-	//$appId = '638413639522476';
-	//$redirecturi = 'http://localhost:81/compod/compod/server.php/loginFacebook';
-	//$secret = '3c45804cc85d4c5e98c76c4aa56d850d';
-	
 	if(!isset($_GET['code']) && !isset($_SESSION['token']))
 	{
 	    //$params = array('scope' => 'email', 'redirect_url' => 'http://localhost:81/compod/compod/server.php/loginFacebook');
@@ -89,17 +83,24 @@ class UserController extends BaseController {
 	    $user = User::where('username', '=', $userfacebook['username'])->first();
 	    $userdata = array('username' =>  $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
 	    
-	    if($user == null)
+	    if($user == null && array_key_exists('email', $userfacebook))
 	    {
-		DB::table('users')->insert(array(
-		'username'  => $userfacebook['username'],
-		'password'  => Hash::make($userfacebook['id']),
-		'active'    => 1,
-		'email'	=> $userfacebook['email'],
-		'tagline'	=> 'I love communitypodcast'
-		));
-		
-		$userdata = array('username' => $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
+		Return Redirect::to('loginEmail', $user);
+		if(array_key_exists('email', $userfacebook))
+		{
+		    DB::table('users')->insert(array(
+		    'username'  => $userfacebook['username'],
+		    'password'  => Hash::make($userfacebook['id']),
+		    'active'    => 1,
+		    'email'	=> $userfacebook['email'],
+		    'tagline'	=> 'I love communitypodcast'
+		    ));
+		    $userdata = array('username' => $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
+		}
+		else
+		{
+		    Return Redirect::to('loginEmail', $user);
+		}
 	    }
 	    
 	    if ( Auth::attempt($userdata) )

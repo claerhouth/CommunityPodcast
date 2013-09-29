@@ -44,6 +44,7 @@ Route::get('addPodcast', array('before' => 'auth', 'do' => function() {
 Route::post('login', 'UserController@loginUser');
 Route::post('loginFacebook', 'UserController@loginFacebook');
 Route::get('loginFacebook', 'UserController@loginFacebook');
+Route::get('loginEmail', 'UserController@loginFacebookEmail');
 Route::post('signup', 'UserController@insertUser');
 Route::post('user', 'UserController@saveSkills');
 Route::get('user', array('before' => 'auth', 'uses' => 'UserController@showMyUser'));
