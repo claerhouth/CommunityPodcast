@@ -111,7 +111,7 @@ class UserController extends BaseController {
 	    $user = User::where('username', '=', $userfacebook['username'])->first();
 	    $userdata = array('username' =>  $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
 	    
-	    if($user == null && array_key_exists('email', $userfacebook))
+	    if($user == null)
 	    {
 		if(array_key_exists('email', $userfacebook))
 		{
