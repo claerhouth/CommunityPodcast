@@ -21,14 +21,18 @@ class UserController extends BaseController {
 	    }    
 	}
 	
-	DB::table('users')->insert(array(
-	    'username'  => Input::get('username'),
-	    'password'  => Hash::make(Input::get('password')),
-	    'active'    => 1,
-	    'email'	=> Input::get('email'),
-	    'tagline'	=> Input::get('tagline'),
-	    'avatarFile' => $avatarFile
-	));
+	
+	$user = new User();
+	
+	$user->username = Input::get('username');
+	$user->password = Hash::make(Input::get('password'));
+	$user->active = 1;
+	$user->email = Input::get('email');
+	$user->tagline = Input::get('tagline');
+	$user->avatarFile = $avatarFile;
+
+	$user->save();
+
 	
 	return $this->loginUser();
     }
@@ -73,13 +77,15 @@ class UserController extends BaseController {
     
     public function insertUserFacebook(array $userfacebook)
     {
-	DB::table('users')->insert(array(
-		    'username'  => $userfacebook['username'],
-		    'password'  => Hash::make($userfacebook['id']),
-		    'active'    => 1,
-		    'email'	=> $userfacebook['email'],
-		    'tagline'	=> 'I love communitypodcast'
-		    ));
+	$user = new User();
+	
+	$user->username = $userfacebook['username'];
+	$user->password = Hash::make($userfacebook['id']);
+	$user->active = 1;
+	$user->email = $userfacebook['email'];
+	$user->tagline = 'I love communitypodcast';
+	
+	$user->save();
 	
 	return array('username' => $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
     }
