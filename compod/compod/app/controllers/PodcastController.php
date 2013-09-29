@@ -12,7 +12,7 @@ class PodcastController extends BaseController {
 				up.creator
 				from podcasts p
 				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1");
-	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0));
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => ""));
     }
     
     public function insertPodcast(){
@@ -53,7 +53,7 @@ class PodcastController extends BaseController {
     public function showMyPodcast()
     {
 	$podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.creator = 1 AND up.user = '.Auth::user()->id);
-	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "own" => 1));
+	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "own" => 1, "search" => ""));
     }
     
     public function subscribe($id)
@@ -91,6 +91,22 @@ class PodcastController extends BaseController {
 	$episodes = DB::select("select * from episodes where podcast=".$id.' ORDER by publishdate DESC');
 	
 	return View::make('podcast',array('podcast' => $podcastDetail[0], 'episodes' => $episodes));
+    }
+    
+    public function searchPodcast(){
+	$search = Input::get('search');
+	
+	$podcasts = DB::select("select
+			        p.id,
+				p.name,
+				p.description,
+				IF(up.id IS NULL, 0, 1) isSubscribed,
+				up.creator
+				from podcasts p
+				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1
+				WHERE (p.name like '%".$search."%' OR p.description like '%".$search."%')");
+	
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => $search));
     }
 }
 
