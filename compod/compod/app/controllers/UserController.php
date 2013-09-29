@@ -119,7 +119,8 @@ class UserController extends BaseController {
 		}
 		else
 		{
-		    Return Redirect::to('loginEmail')->with('user', $userfacebook);
+		    $_SESSION["user"] = $userfacebook;
+		    Return Redirect::to('loginEmail');
 		}
 	    }
 
