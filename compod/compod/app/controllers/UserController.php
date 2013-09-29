@@ -41,19 +41,47 @@ class UserController extends BaseController {
 	    'active'        => 1
 	);
 	
+	return $this->authenticateUser($userdata);
+    }
+    
+    public function loginFacebookEmail()
+    {
+	$userfacebook = $_SESSION['user'];
+	$userfacebook['email'] = Input::get('email');
+
+	$userdata = $this->insertUserFacebook($userfacebook);
+	return $this->authenticateUser($userdata);
+	
+    }
+    
+    public function authenticateUser(array $userdata)
+    {
 	if ( Auth::attempt($userdata) )
-	{
-	    // we are now logged in, go to home
-	    return Redirect::to('');
-	}
-	else
-	{
+	    {
+	        // we are now logged in, go to home
+	        return Redirect::to('');
+	    }
+	    else
+	    {
 	    // auth failure! lets go back to the login
-	    return Redirect::to('login')
-		->with('login_errors', true);
+	        return Redirect::to('login')
+			->with('login_errors', true);
 	    // pass any error notification you want
 	    // i like to do it this way :)
-	}
+	    }
+    }
+    
+    public function insertUserFacebook(array $userfacebook)
+    {
+	DB::table('users')->insert(array(
+		    'username'  => $userfacebook['username'],
+		    'password'  => Hash::make($userfacebook['id']),
+		    'active'    => 1,
+		    'email'	=> $userfacebook['email'],
+		    'tagline'	=> 'I love communitypodcast'
+		    ));
+	
+	return array('username' => $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
     }
     
     public function loginFacebook()
@@ -85,37 +113,20 @@ class UserController extends BaseController {
 	    
 	    if($user == null && array_key_exists('email', $userfacebook))
 	    {
-		Return Redirect::to('loginEmail', $user);
 		if(array_key_exists('email', $userfacebook))
 		{
-		    DB::table('users')->insert(array(
-		    'username'  => $userfacebook['username'],
-		    'password'  => Hash::make($userfacebook['id']),
-		    'active'    => 1,
-		    'email'	=> $userfacebook['email'],
-		    'tagline'	=> 'I love communitypodcast'
-		    ));
-		    $userdata = array('username' => $userfacebook['username'], 'password' => $userfacebook['id'], 'active' => 1);
+		    $userdata = $this->insertUserFacebook($userfacebook);
 		}
 		else
 		{
-		    Return Redirect::to('loginEmail', $user);
+		    Return Redirect::to('loginEmail')->with('user', $userfacebook);
 		}
 	    }
+
+	
+	    return $this->authenticateUser($userdata);
 	    
-	    if ( Auth::attempt($userdata) )
-	    {
-	        // we are now logged in, go to home
-	        return Redirect::to('');
-	    }
-	    else
-	    {
-	    // auth failure! lets go back to the login
-	        return Redirect::to('login')
-			->with('login_errors', true);
-	    // pass any error notification you want
-	    // i like to do it this way :)
-	    }
+	    
 	}    
     }
     
