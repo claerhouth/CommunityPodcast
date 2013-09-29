@@ -93,7 +93,7 @@ class UserController extends BaseController {
 	    //$params = array('scope' => 'email', 'redirect_url' => 'http://localhost:81/compod/compod/server.php/loginFacebook');
 	    //$login = "https://www.facebook.com/dialog/oauth?client_id={$appId}&redirect_uri={$redirecturi}";
 	    
-	    $login = $auth->getLoginUrl(array(scope => 'email'));
+	    $login = $auth->getLoginUrl(array('scope' => 'email'));
 	    return Redirect::to($login);
 	}
 	elseif(isset($_GET['code']))
