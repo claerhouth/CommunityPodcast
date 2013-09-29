@@ -98,6 +98,10 @@ class UserController extends BaseController {
 	}
 	elseif(isset($_GET['code']))
 	{
+	    if(isset($_GET['error']))
+	    {
+		return Redirect::to('login');
+	    }
 	    $code = $_GET['code'];
 	   
 	    //$access = "https://graph.facebook.com/oauth/access_token?client_id={$appId}&redirect_uri={$redirecturi}&client_secret={$secret}&code={$code}";
