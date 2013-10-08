@@ -1,0 +1,561 @@
+[2013-10-08 18:46:23] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 18:49:16] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' with message 'Controller method not found.' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php:290
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(302): Illuminate\Routing\Controllers\Controller->missingMethod(Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Routing\Controllers\Controller->__call('call', Array)
+#2 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Routing\Controllers\Controller->call('EpisodeControll...')
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#4 [internal function]: UserController->loginUser()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#8 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#16 {main} [] []
+[2013-10-08 18:51:09] log.ERROR: exception 'ErrorException' with message 'Use of undefined constant EpisodeController - assumed 'EpisodeController'' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', 'C:\wamp\www\com...', 66, Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#2 [internal function]: UserController->loginUser()
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 18:54:17] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' with message 'Controller method not found.' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php:290
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(302): Illuminate\Routing\Controllers\Controller->missingMethod(Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Routing\Controllers\Controller->__call('call', Array)
+#2 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Routing\Controllers\Controller->call('EpisodeControll...')
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#4 [internal function]: UserController->loginUser()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#8 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#16 {main} [] []
+[2013-10-08 18:56:48] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' with message 'Controller method not found.' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php:290
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(302): Illuminate\Routing\Controllers\Controller->missingMethod(Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Routing\Controllers\Controller->__call('call', Array)
+#2 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Routing\Controllers\Controller->call('EpisodeControll...', Array)
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#4 [internal function]: UserController->loginUser()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#8 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#16 {main} [] []
+[2013-10-08 19:00:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Episode' not found' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:03:56] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Database\Eloquent\Collection::orderBy()' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:04:42] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Database\Eloquent\Collection::OrderBy()' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:05:28] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Database\Eloquent\Collection::orderBy()' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:07:17] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Database\Eloquent\Collection::orderBy()' in C:\wamp\www\compod\compod\app\controllers\UserController.php:66
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:07:51] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for Illuminate\Support\Collection::get(), called in C:\wamp\www\compod\compod\app\controllers\UserController.php on line 66 and defined' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Collection.php:64
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Collection.php(64): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\wamp\www\com...', 64, Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(66): Illuminate\Support\Collection->get()
+#2 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#3 [internal function]: UserController->loginUser()
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#14 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#15 {main} [] []
+[2013-10-08 19:08:23] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recenteEpisodes' in C:\wamp\www\compod\compod\app\controllers\UserController.php:67
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\controllers\UserController.php(67): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 67, Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#2 [internal function]: UserController->loginUser()
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:08:44] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recenteEpisodes' in C:\wamp\www\compod\compod\app\controllers\UserController.php:67
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\controllers\UserController.php(67): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 67, Array)
+#1 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#2 [internal function]: UserController->loginUser()
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:09:08] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recenteEpisodes' in C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03:34
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03(34): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 34, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:09:45] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recentEpisodes' in C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03:34
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03(34): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 34, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:11:10] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recentEpisodes' in C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03:34
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03(34): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 34, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:11:19] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recentEpisodes' in C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03:34
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03(34): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 34, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:12:20] log.ERROR: exception 'ErrorException' with message 'Undefined variable: recentEpisodes' in C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03:34
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\82c318fb0e75ca1649d2c6605c89ff03(34): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\wamp\www\com...', 34, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#14 {main} [] []
+[2013-10-08 19:16:11] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ')'' in C:\wamp\www\compod\compod\app\controllers\UserController.php:67
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:17:16] log.ERROR: exception 'InvalidArgumentException' with message 'The HTTP status code "1" is not valid.' in C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php:425
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(142): Symfony\Component\HttpFoundation\Response->setStatusCode(Array)
+#1 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\RedirectResponse.php(44): Symfony\Component\HttpFoundation\Response->__construct('', Array, Array)
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Redirector.php(175): Symfony\Component\HttpFoundation\RedirectResponse->__construct('http://localhos...', Array, Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Redirector.php(117): Illuminate\Routing\Redirector->createRedirect('http://localhos...', Array, Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Routing\Redirector->to('', Array)
+#5 C:\wamp\www\compod\compod\app\controllers\UserController.php(67): Illuminate\Support\Facades\Facade::__callStatic('to', Array)
+#6 C:\wamp\www\compod\compod\app\controllers\UserController.php(67): Illuminate\Support\Facades\Redirect::to('', Array)
+#7 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#8 [internal function]: UserController->loginUser()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#20 {main} [] []
+[2013-10-08 19:17:33] log.ERROR: exception 'InvalidArgumentException' with message 'The HTTP status code "1" is not valid.' in C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php:425
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(142): Symfony\Component\HttpFoundation\Response->setStatusCode(Array)
+#1 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\RedirectResponse.php(44): Symfony\Component\HttpFoundation\Response->__construct('', Array, Array)
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Redirector.php(175): Symfony\Component\HttpFoundation\RedirectResponse->__construct('http://localhos...', Array, Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Redirector.php(117): Illuminate\Routing\Redirector->createRedirect('http://localhos...', Array, Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Routing\Redirector->to('', Array)
+#5 C:\wamp\www\compod\compod\app\controllers\UserController.php(67): Illuminate\Support\Facades\Facade::__callStatic('to', Array)
+#6 C:\wamp\www\compod\compod\app\controllers\UserController.php(67): Illuminate\Support\Facades\Redirect::to('', Array)
+#7 C:\wamp\www\compod\compod\app\controllers\UserController.php(48): UserController->authenticateUser(Array)
+#8 [internal function]: UserController->loginUser()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('loginUser', Array)
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'loginUser', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#20 {main} [] []
+[2013-10-08 19:23:12] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Database\Eloquent\Collection::orderBy()' in C:\wamp\www\compod\compod\app\controllers\UserController.php:80
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:26:48] log.ERROR: exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::all()' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:1635
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('all', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->all()
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(755): call_user_func_array(Array, Array)
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->__call('all', Array)
+#4 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->all()
+#5 [internal function]: UserController->showHome()
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showHome', Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showHome', Array)
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#16 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#17 {main} [] []
+[2013-10-08 19:27:06] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM)' in C:\wamp\www\compod\compod\app\controllers\UserController.php:80
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:28:08] log.ERROR: exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::all()' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:1635
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('all', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->all()
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(755): call_user_func_array(Array, Array)
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->__call('all', Array)
+#4 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->all()
+#5 [internal function]: UserController->showHome()
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showHome', Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showHome', Array)
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#16 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#17 {main} [] []
+[2013-10-08 19:28:33] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Database\Eloquent\Collection::orderBy()' in C:\wamp\www\compod\compod\app\controllers\UserController.php:80
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:28:56] log.ERROR: exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::all()' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:1635
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('all', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->all()
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(755): call_user_func_array(Array, Array)
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->__call('all', Array)
+#4 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->all()
+#5 [internal function]: UserController->showHome()
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showHome', Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showHome', Array)
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#16 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#17 {main} [] []
+[2013-10-08 19:30:06] log.ERROR: exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::all()' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:1635
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('all', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->all()
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(755): call_user_func_array(Array, Array)
+#3 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->__call('all', Array)
+#4 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Builder->all()
+#5 [internal function]: UserController->showHome()
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showHome', Array)
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showHome', Array)
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#11 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#16 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#17 {main} [] []
+[2013-10-08 19:30:23] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM)' in C:\wamp\www\compod\compod\app\controllers\UserController.php:80
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-10-08 19:34:46] log.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [1226] User 'b58e714ddd9e63' has exceeded the 'max_user_connections' resource (current value: 4)' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:47
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(47): PDO->__construct('mysql:host=eu-c...', 'b58e714ddd9e63', 'fd104d27', Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(20): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=eu-c...', Array, Array)
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(41): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(115): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql')
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(64): Illuminate\Database\DatabaseManager->makeConnection('mysql')
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2374): Illuminate\Database\DatabaseManager->connection(NULL)
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2340): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1443): Illuminate\Database\Eloquent\Model->getConnection()
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1377): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2552): Illuminate\Database\Eloquent\Model->newQuery()
+#10 [internal function]: Illuminate\Database\Eloquent\Model->__call('orderBy', Array)
+#11 [internal function]: Episode->orderBy('id', 'DESC')
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2568): call_user_func_array(Array, Array)
+#13 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Model::__callStatic('orderBy', Array)
+#14 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Episode::orderBy('id', 'DESC')
+#15 [internal function]: UserController->showHome()
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#17 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showHome', Array)
+#18 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showHome', Array)
+#19 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#20 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#21 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#22 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#23 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#24 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#25 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#26 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#27 {main} [] []
+[2013-10-08 19:34:50] log.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [1226] User 'b58e714ddd9e63' has exceeded the 'max_user_connections' resource (current value: 4)' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:47
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(47): PDO->__construct('mysql:host=eu-c...', 'b58e714ddd9e63', 'fd104d27', Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(20): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=eu-c...', Array, Array)
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(41): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(115): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql')
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(64): Illuminate\Database\DatabaseManager->makeConnection('mysql')
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2374): Illuminate\Database\DatabaseManager->connection(NULL)
+#6 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2340): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1443): Illuminate\Database\Eloquent\Model->getConnection()
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1377): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2552): Illuminate\Database\Eloquent\Model->newQuery()
+#10 [internal function]: Illuminate\Database\Eloquent\Model->__call('orderBy', Array)
+#11 [internal function]: Episode->orderBy('id', 'DESC')
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2568): call_user_func_array(Array, Array)
+#13 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Illuminate\Database\Eloquent\Model::__callStatic('orderBy', Array)
+#14 C:\wamp\www\compod\compod\app\controllers\UserController.php(80): Episode::orderBy('id', 'DESC')
+#15 [internal function]: UserController->showHome()
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#17 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showHome', Array)
+#18 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showHome', Array)
+#19 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#20 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#21 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#22 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#23 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#24 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#25 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#26 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#27 {main} [] []
+[2013-10-08 19:50:26] log.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$iconFile' in C:\wamp\www\compod\compod\app\storage\views\ea468b3119e0719b578a1a786e03d8e8:32
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\ea468b3119e0719b578a1a786e03d8e8(32): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', 'C:\wamp\www\com...', 32, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'searchPodcast', Object(Illuminate\View\View))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'searchPodcast', Array)
+#11 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#19 {main} [] []
+[2013-10-08 19:50:54] log.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$iconFile' in C:\wamp\www\compod\compod\app\storage\views\ea468b3119e0719b578a1a786e03d8e8:32
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\ea468b3119e0719b578a1a786e03d8e8(32): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', 'C:\wamp\www\com...', 32, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'searchPodcast', Object(Illuminate\View\View))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'searchPodcast', Array)
+#11 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#19 {main} [] []
+[2013-10-08 19:51:23] log.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$iconFile' in C:\wamp\www\compod\compod\app\storage\views\ea468b3119e0719b578a1a786e03d8e8:32
+Stack trace:
+#0 C:\wamp\www\compod\compod\app\storage\views\ea468b3119e0719b578a1a786e03d8e8(32): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', 'C:\wamp\www\com...', 32, Array)
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('C:\wamp\www\com...')
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\wamp\www\com...', Array)
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('C:\wamp\www\com...', Array)
+#4 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 C:\wamp\www\compod\compod\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'searchPodcast', Object(Illuminate\View\View))
+#10 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'searchPodcast', Array)
+#11 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#12 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#19 {main} [] []
+[2013-10-08 19:52:35] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#6 {main} [] []
+[2013-10-08 19:52:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#6 {main} [] []
+[2013-10-08 19:52:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#6 {main} [] []
+[2013-10-08 19:52:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#6 {main} [] []
+[2013-10-08 19:52:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#6 {main} [] []
+[2013-10-08 19:52:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1429
+Stack trace:
+#0 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(530): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 C:\wamp\www\compod\compod\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(506): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 C:\wamp\www\compod\compod\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 C:\wamp\www\compod\compod\server.php(19): require_once('C:\wamp\www\com...')
+#6 {main} [] []
