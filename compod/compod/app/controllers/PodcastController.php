@@ -8,11 +8,18 @@ class PodcastController extends BaseController {
 			        p.id,
 				p.name,
 				p.description,
+				p.iconFile,
 				IF(up.id IS NULL, 0, 1) isSubscribed,
 				up.creator
 				from podcasts p
 				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1");
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => ""));
+    }
+    
+    public function showMyPodcast()
+    {
+	$podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.creator = 1 AND up.user = '.Auth::user()->id);
+	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "own" => 1, "search" => ""));
     }
     
     public function insertPodcast(){
@@ -50,12 +57,6 @@ class PodcastController extends BaseController {
 	return $this->showMyPodcast();
     }
     
-    public function showMyPodcast()
-    {
-	$podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.creator = 1 AND up.user = '.Auth::user()->id);
-	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "own" => 1, "search" => ""));
-    }
-    
     public function subscribe($id)
     {
 	return $this->changeSubscribe($id, 1);
@@ -89,8 +90,9 @@ class PodcastController extends BaseController {
     public function showPodcastDetail($id){
 	$podcastDetail = DB::select("select * from podcasts where id =".$id);
 	$episodes = DB::select("select * from episodes where podcast=".$id.' ORDER by publishdate DESC');
+	$podcastSkills = $this->getUserSkills($id);
 	
-	return View::make('podcast',array('podcast' => $podcastDetail[0], 'episodes' => $episodes));
+	return View::make('podcast',array('podcast' => $podcastDetail[0], 'episodes' => $episodes, 'skills' => $podcastSkills));
     }
     
     public function searchPodcast(){
@@ -107,6 +109,49 @@ class PodcastController extends BaseController {
 				WHERE (p.name like '%".$search."%' OR p.description like '%".$search."%')");
 	
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => $search));
+    }
+    
+    public function getUserSkills($podcast_id){
+	return 	DB::select("select s.*,
+		    us.id user_skill_id,
+		    usp.*,
+		    if(usp.id IS NULL, 0, 1) use_skill
+		    from user_skill us
+		    JOIN skills s on s.id = us.skill
+		    LEFT JOIN user_skill_podcast usp ON usp.podcast = ".$podcast_id." and usp.user_skill = us.id and usp.active = 1 
+		    WHERE us.user =".Auth::user()->id." 
+		    AND us.active = true");
+    }
+    
+    public function saveSkills(){
+	$podcast_id = Input::get("podcastId");
+	$skills = $this->getUserSkills($podcast_id);
+	
+	foreach($skills as $skill){
+	    $used = false;
+	    
+	    if(Input::get($skill->skill) == $skill->user_skill_id){
+		$used = true;
+	    }
+	    
+	    if($used != $skill->use_skill){ //only try update if value has changed
+
+		$result = DB::table('user_skill_podcast')
+			->where('user_skill', $skill->user_skill_id)
+			->where('podcast', $podcast_id)
+			->update(array('active' => $used));
+			
+		if(!$result && $used){ //if update fails, that means there isn't a row yet so we insert one, but only if the skill is mastered
+		    $result = DB::table('user_skill_podcast')->insert(array(
+			'user_skill'  => $skill->user_skill_id,
+			'podcast'  => $podcast_id,
+			'active'    => 1
+		    ));
+		}
+	    }
+	}
+	
+	return Redirect::to('podcast/'.$podcast_id);
     }
 }
 

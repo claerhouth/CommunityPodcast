@@ -25,10 +25,6 @@ Route::get('logout', function() {
     return Redirect::to('login');
 });
 
-Route::get('', array('before' => 'auth', 'do' => function() {
-    return View::make('home');
-}));
-
 Route::get('player', function() {
     return View::make('playertest');
 });
@@ -41,6 +37,7 @@ Route::get('addPodcast', array('before' => 'auth', 'do' => function() {
 //___ACTIONS
 
 //USERS
+Route::get('', 'UserController@showHome');
 Route::post('login', 'UserController@loginUser');
 Route::post('loginFacebook', 'UserController@loginFacebook');
 Route::post('loginFacebookEmail', 'UserController@loginFacebookEmail');
@@ -58,6 +55,7 @@ Route::get('unsubscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastContr
 Route::post('addPodcast', 'PodcastController@insertPodcast');
 Route::get('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@showPodcastDetail'));
 Route::post('searchpodcast', array('before' => 'auth', 'uses' =>'PodcastController@searchPodcast'));
+Route::post('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@saveSkills'));
 
 //EPISODES
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
@@ -74,3 +72,4 @@ Route::get('createTestEpisodes', 'DefaultDataController@createTestEpisodes');
 Route::get('simulatePodcastCreators', 'DefaultDataController@makeTestPodcastCreators');
 Route::get('simulateSkillOwners', 'DefaultDataController@makeTestSkillOwners');
 Route::get('simulateEpisodeCreators', 'DefaultDataController@simulateEpisodeCreators');
+

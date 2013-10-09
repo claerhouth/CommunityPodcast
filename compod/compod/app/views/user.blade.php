@@ -42,8 +42,8 @@
                       @foreach($episodes as $episode)
                         <tr>
                           <td>{{$episode->episode_date}}</td>
-                          <td>{{$episode->episode_title}}</td>
-                          <td>{{$episode->podcast_name}}</td>
+                          <td><a href="/compod/compod/server.php/episode/{{$episode->episode_id}}">{{$episode->episode_title}}</a></td>
+                          <td><a href="/compod/compod/server.php/podcast/{{$episode->podcast_id}}">{{$episode->podcast_name}}</a></td>
                           <td>
                             @if ($episode->episode_isCreator == 1)
                               Yes
@@ -68,7 +68,7 @@
                                 @if ($podcast->podcast_isCreator == 1)
                                   <b>
                                 @endif
-                              <a href="#">{{$podcast->name}}</a>
+                              <a href="/compod/compod/server.php/podcast/{{$podcast->id}}">{{$podcast->name}}</a>
                                   @if ($podcast->podcast_isCreator == 1)
                                    </b>
                                   @endif
@@ -80,7 +80,7 @@
       
       <div class="col-md-2">                        
           <div class="panel panel-default">
-              <div class="panel-heading">Mastered skills</div>
+              <div class="panel-heading">My skills</div>
                   <ul class="list-group">
                       {{ Form::open(array('action' => 'UserController@saveSkills')) }}
                       @foreach($skills as $skill)

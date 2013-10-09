@@ -63,7 +63,8 @@ class UserController extends BaseController {
 	if ( Auth::attempt($userdata) )
 	    {
 	        // we are now logged in, go to home
-	        return Redirect::to('');
+		
+		return Redirect::to('');
 	    }
 	    else
 	    {
@@ -73,6 +74,11 @@ class UserController extends BaseController {
 	    // pass any error notification you want
 	    // i like to do it this way :)
 	    }
+    }
+    
+    public function showHome(){
+	$recentEpisodes = Episode::orderBy('id', 'DESC')->get()->take(8);
+	return View::make('home' ,array("recentEpisodes" => $recentEpisodes));
     }
     
     public function insertUserFacebook(array $userfacebook)
@@ -147,18 +153,21 @@ class UserController extends BaseController {
     {
 	$user_id = Auth::user()->id;
 	$skills = $this->getAllSkills();
-	$podcasts = DB::select("select p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id LEFT JOIN episodes e ON e.podcast = p.id and e.active = 1 WHERE p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
+	$podcasts = DB::select("select p.id, p.name, count(e.id) episode_count, up.creator podcast_isCreator from podcasts p JOIN user_podcast up ON up.podcast = p.id LEFT JOIN episodes e ON e.podcast = p.id and e.active = 1 WHERE p.active = 1 AND up.active = 1 AND up.user = ".$user_id." GROUP BY p.name");
 	$episodes = DB::select('SELECT 
 				A.episode_date,
 				A.episode_title,
 				A.podcast_name,
+				A.podcast_id,
+				A.episode_id,
 				IF(c.id is NULL, 0, 1) episode_isCreator
 				FROM
 				    (
-				    SELECT 	date(e.publishdate) episode_date, 
+				    SELECT  date(e.publishdate) episode_date, 
 					    e.title episode_title, 
 					    e.id episode_id,
-					    p.name podcast_name
+					    p.name podcast_name,
+					    p.id podcast_id
 				    FROM episodes e 
 				    JOIN podcasts p ON p.id = e.podcast 
 				    JOIN user_podcast up on p.id = up.podcast 
@@ -177,42 +186,29 @@ class UserController extends BaseController {
     
     public function saveSkills()
     {
-	$skills = Skill::all();
+	$skills = $this->getAllSkills();
 	$user_id = Auth::user()->id;
 	$debug = "";
-	
-	foreach($skills as $skill)
-	{
+	foreach($skills as $skill){
 	    $mastered = false;
-	    if(Input::get($skill->skill) == $skill->id)
-	    {
+	    if(Input::get($skill->skill) == $skill->id){
 		$mastered = true;
 	    }
 	    
-	    $user = User::find($user_id);
-	    
-	    $found = false;
-	    
-	    
-	    $userskill = $user->skills->filter(function ($userskill) { $userskill->id == $skill->id ;});
-	    
-	    if($userskill != null)
-	    {
-		if($userskill->pivot->active != $mastered)
-		{
-		    $userskill->pivot->active = $mastered;
+	    if($mastered != $skill->is_mastered){ //only try update if value has changed
+		$result = DB::table('user_skill')
+			->where('user', $user_id)
+			->where('skill', $skill->id)
+			->update(array('active' => $mastered));
+			
+		if(!$result && $mastered){ //if update fails, that means there isn't a row yet so we insert one, but only if the skill is mastered
+		    $result = DB::table('user_skill')->insert(array(
+			'user'  => $user_id,
+			'skill'  => $skill->id,
+			'active'    => 1
+		    ));
 		}
-		
-		$found = true;
 	    }
-	    
-	    if ($mastered && !$found)
-	    {
-		$user->skills()->attach(array($skill->id => array('active' => true)));
-	    }
-	    
-	    
-	    $user->save();
 	}
 	
 	return $this->showMyUser();

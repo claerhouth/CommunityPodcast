@@ -27,25 +27,30 @@
 
 <ul>
     @foreach($podcasts as $podcast)
-    <li class="list-group-item">
-        <div class="row">
-            <div class="span10"><a href="/compod/compod/server.php/podcast/{{$podcast->id}}"><b>{{$podcast->name}}</b></a> <em> - {{$podcast->description}}</em></div>
-            
-            @if ($own == 0)
-            <div class="span1">
-                @if (!$podcast->creator)
-                    @if ($podcast->isSubscribed)
-                        <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button></a>
-                    @else
-                        <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></button></a>
-                    @endif
-                @else
-                    <p class="text-info">creator</p>
-                @endif
+        <li class="list-group-item" style="min-height:84px;">
+            <div class="col-md-1">
+                <a href="/compod/compod/server.php/podcast/{{$podcast->id}}">
+                    <img class="media-object" src="../public/img/podcastlogos/{{ $podcast->iconFile }}" alt="Podcast icon" width="64" height="64">
+                </a>
             </div>
-            @endif
-        </div>
-    </li>
-  @endforeach
+            <div>
+                @if ($own == 0)
+                    <span class="pull-right">
+                        @if (!$podcast->creator)
+                            @if ($podcast->isSubscribed)
+                                <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button></a>
+                            @else
+                                <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></button></a>
+                            @endif
+                        @else
+                            <p class="text-info">creator</p>
+                        @endif
+                    </span>
+                @endif
+                <a href="/compod/compod/server.php/podcast/{{$podcast->id}}"><b>{{$podcast->name}}</b></a><br/>
+                <em>{{$podcast->description}}</em>
+            </div>
+        </li>    
+    @endforeach
 </ul>
 @stop
