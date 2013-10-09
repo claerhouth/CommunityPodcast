@@ -177,29 +177,42 @@ class UserController extends BaseController {
     
     public function saveSkills()
     {
-	$skills = $this->getAllSkills();
+	$skills = Skill::all();
 	$user_id = Auth::user()->id;
 	$debug = "";
-	foreach($skills as $skill){
+	
+	foreach($skills as $skill)
+	{
 	    $mastered = false;
-	    if(Input::get($skill->skill) == $skill->id){
+	    if(Input::get($skill->skill) == $skill->id)
+	    {
 		$mastered = true;
 	    }
 	    
-	    if($mastered != $skill->is_mastered){ //only try update if value has changed
-		$result = DB::table('user_skill')
-			->where('user', $user_id)
-			->where('skill', $skill->id)
-			->update(array('active' => $mastered));
-			
-		if(!$result && $mastered){ //if update fails, that means there isn't a row yet so we insert one, but only if the skill is mastered
-		    $result = DB::table('user_skill')->insert(array(
-			'user'  => $user_id,
-			'skill'  => $skill->id,
-			'active'    => 1
-		    ));
+	    $user = User::find($user_id);
+	    
+	    $found = false;
+	    
+	    
+	    $userskill = $user->skills->filter(function ($userskill) { $userskill->id == $skill->id ;});
+	    
+	    if($userskill != null)
+	    {
+		if($userskill->pivot->active != $mastered)
+		{
+		    $userskill->pivot->active = $mastered;
 		}
+		
+		$found = true;
 	    }
+	    
+	    if ($mastered && !$found)
+	    {
+		$user->skills()->attach(array($skill->id => array('active' => true)));
+	    }
+	    
+	    
+	    $user->save();
 	}
 	
 	return $this->showMyUser();
