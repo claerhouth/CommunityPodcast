@@ -37,8 +37,13 @@ class UserController extends BaseController {
 	return $this->loginUser();
     }
     
-    public function loginUser()
+ public function loginUser()
     {
+	if (Input::get("LoginFacebook", false))
+	{
+		return $this->loginFacebook();
+	}
+
 	$userdata = array(
 	    'username'      => Input::get('username'),
 	    'password'      => Input::get('password'),
@@ -47,7 +52,7 @@ class UserController extends BaseController {
 	
 	return $this->authenticateUser($userdata);
     }
-    
+
     public function loginFacebookEmail()
     {
 	$userfacebook = $_SESSION['user'];
