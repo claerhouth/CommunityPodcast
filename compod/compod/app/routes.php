@@ -12,9 +12,9 @@
 */
 
 //__BASIC_NAVIGATION
+
 Route::get('login', array('as' => 'login', function() {
-    return View::make('login');
-}));
+    return View::make('login');}));
 
 Route::get('signup', function(){
     return View::make('signup');
@@ -37,7 +37,7 @@ Route::get('addPodcast', array('before' => 'auth', 'do' => function() {
 //___ACTIONS
 
 //USERS
-Route::get('', 'UserController@showHome');
+Route::get('',  array('before' => 'auth','uses' => 'UserController@showHome'));
 Route::post('login', 'UserController@loginUser');
 Route::post('loginFacebook', 'UserController@loginFacebook');
 Route::post('loginFacebookEmail', 'UserController@loginFacebookEmail');
