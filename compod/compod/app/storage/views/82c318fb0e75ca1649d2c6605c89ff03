@@ -16,7 +16,7 @@
     <h1>Most recent</h1>
         <div class="row">
             <?php foreach($recentEpisodes as $episode): ?>
-            <div class="col-md-3">
+            <div class="col-md-3" style="margin-top:10px;">
                 <div class="thumbnail">
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1">
