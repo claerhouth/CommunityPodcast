@@ -88,7 +88,7 @@ class PodcastController extends BaseController {
     }
     
     public function showPodcastDetail($id){
-	$podcastDetail = DB::select("select * from podcasts where id =".$id);
+	$podcastDetail = DB::select("select p.*, u.username podcast_creator from podcasts p join user_podcast up on up.podcast = p.id join users u on u.id = up.user  where p.id =".$id);
 	$episodes = DB::select("select * from episodes where podcast=".$id.' ORDER by publishdate DESC');
 	$podcastSkills = $this->getUserSkills($id);
 	

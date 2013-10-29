@@ -14,6 +14,7 @@
       </div>
       <div class="media-body">
         <h3 class="media-heading">{{ $podcast->name }}</h3>
+        <em>Created by <b>{{$podcast->podcast_creator}}</b></em><br/>
         <em>{{$podcast->description}}</em>
       </div>
   </div>
