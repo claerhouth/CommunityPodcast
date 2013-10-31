@@ -59,6 +59,9 @@ Route::post('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastControll
 
 //EPISODES
 Route::get('recentoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showRecentEpisodes'));
+Route::get('oldoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showOldEpisodes'));
+Route::get('abcoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAbcEpisodes'));
+Route::get('zyxoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showZyxEpisodes'));
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
 Route::get('episodeoverviewforuser', array('before' => 'auth', 'uses' =>'EpisodeController@showMyEpisodes'));
 Route::get('episode/{id?}', array('before' => 'auth', 'uses' =>'EpisodeController@showEpisodeDetail'));

@@ -12,6 +12,21 @@ class EpisodeController extends BaseController {
 	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate DESC LIMIT 25');
 	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "recent"));
     }
+    public function showOldEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate ASC LIMIT 25');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "old"));
+    }
+    public function showAbcEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY episode_title ASC LIMIT 25');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "alfabetical list of"));
+    }
+    public function showZyxEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY episode_title DESC LIMIT 25');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "reverse alfabetical list of"));
+    }
     
     public function showMyEpisodes()
     {
