@@ -7,6 +7,7 @@ class EpisodeController extends BaseController {
 	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "all"));
     }
     
+    //alle episode views van de episode paginas
     public function showRecentEpisodes()
     {
 	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate DESC LIMIT 25');
@@ -27,6 +28,30 @@ class EpisodeController extends BaseController {
 	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY episode_title DESC LIMIT 25');
 	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "reverse alfabetical list of"));
     }
+    
+    //user episode views van de episode paginas
+    public function showRecentUserEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon , p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id WHERE c.user = '.Auth::user()->id.' ORDER BY publishdate DESC');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => Auth::user()->username."'s recent"));
+    }
+    public function showOldUserEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon , p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id WHERE c.user = '.Auth::user()->id.' ORDER BY publishdate ASC');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => Auth::user()->username."'s old"));
+    }
+    public function showAbcUserEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon , p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id WHERE c.user = '.Auth::user()->id.' ORDER BY episode_title ASC');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => Auth::user()->username."'s alfabetical list of"));
+    }
+    public function showZyxUserEpisodes()
+    {
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon , p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id WHERE c.user = '.Auth::user()->id.' ORDER BY episode_title DESC');
+	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => Auth::user()->username."'s reverse alfabetical list of"));
+    }
+    
+    
     
     public function showMyEpisodes()
     {
@@ -108,6 +133,8 @@ class EpisodeController extends BaseController {
 	
 	return Redirect::to('podcast/'.$podcast_id);
     }
+
+    
 }
 
 ?>

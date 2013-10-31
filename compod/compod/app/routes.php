@@ -47,6 +47,7 @@ Route::post('signup', 'UserController@insertUser');
 Route::post('user', 'UserController@saveSkills');
 Route::get('user', array('before' => 'auth', 'uses' => 'UserController@showMyUser'));
 
+
 //PODCASTS
 Route::get('podcastoverview', array('before' => 'auth', 'uses' =>'PodcastController@showAllPodcast'));
 Route::get('podcastoverviewforuser', array('before' => 'auth', 'uses' =>'PodcastController@showMyPodcast'));
@@ -62,11 +63,16 @@ Route::get('recentoverview', array('before' => 'auth', 'uses' =>'EpisodeControll
 Route::get('oldoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showOldEpisodes'));
 Route::get('abcoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAbcEpisodes'));
 Route::get('zyxoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showZyxEpisodes'));
+Route::get('recentuseroverview', array('before' => 'auth', 'uses' =>'EpisodeController@showRecentUserEpisodes'));
+Route::get('olduseroverview', array('before' => 'auth', 'uses' =>'EpisodeController@showOldUserEpisodes'));
+Route::get('abcuseroverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAbcUserEpisodes'));
+Route::get('zyxuseroverview', array('before' => 'auth', 'uses' =>'EpisodeController@showZyxUserEpisodes'));
 Route::get('episodeoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showAllEpisodes'));
 Route::get('episodeoverviewforuser', array('before' => 'auth', 'uses' =>'EpisodeController@showMyEpisodes'));
 Route::get('episode/{id?}', array('before' => 'auth', 'uses' =>'EpisodeController@showEpisodeDetail'));
 Route::get('addEpisode/{podcast_id?}', array('before' => 'auth', 'uses' =>'EpisodeController@addEpisode'));
 Route::post('addEpisode', 'EpisodeController@insertEpisode');
+
 
 //DEFAULT DATA
 Route::get('insertuser', 'DefaultDataController@insertTestUser');
@@ -76,4 +82,5 @@ Route::get('createTestEpisodes', 'DefaultDataController@createTestEpisodes');
 Route::get('simulatePodcastCreators', 'DefaultDataController@makeTestPodcastCreators');
 Route::get('simulateSkillOwners', 'DefaultDataController@makeTestSkillOwners');
 Route::get('simulateEpisodeCreators', 'DefaultDataController@simulateEpisodeCreators');
+
 
