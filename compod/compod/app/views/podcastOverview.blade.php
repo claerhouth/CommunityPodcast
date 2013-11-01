@@ -10,7 +10,7 @@
 @if ($search != "")
 <h1>Showing podcasts for {{$search}}</h1>
 @else
-<h1>Showing all podcasts @if ($own == 1) created by {{ Auth::user()->username }} @endif</h1>
+<h1>Showing {{$type}} podcasts</h1>
 @endif
 
 @if (sizeof($podcasts) == 0 && $search != "")
@@ -24,17 +24,37 @@
     <a href="/compod/compod/server.php/addPodcast"><button type="button" class="btn btn-primary">Add a podcast</button></a><br/><br/>
 @endif
 
+    <?php
+        if (strpos("$_SERVER[REQUEST_URI]",'user') === false)
+        {
+            echo
+            '<div class="container">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Sort
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="/compod/compod/server.php/podcastoverview"><div class="glyphicon glyphicon-sort-by-order"></div> All</a></li>
+                        <li><a href="/compod/compod/server.php/abcpodcastoverview"><div class="glyphicon glyphicon-sort-by-alphabet"></div> Abcdef...</a></li>
+                        <li><a href="/compod/compod/server.php/zyxpodcastoverview"><div class="glyphicon glyphicon-sort-by-alphabet-alt"></div>  Zyxwvu...</a></li>
+                    </ul>
+                </div>
+            </div>'
+            ;
+        }
+    ?>
 
 <ul>
     @foreach($podcasts as $podcast)
-        <li class="list-group-item" style="min-height:84px;">
+        <li class="list-group-item" style="min-height:84px; margin-top:10px;">
             <div class="col-md-1">
                 <a href="/compod/compod/server.php/podcast/{{$podcast->id}}">
                     <img class="media-object" src="../public/img/podcastlogos/{{ $podcast->iconFile }}" alt="Podcast icon" width="64" height="64">
                 </a>
             </div>
             <div>
-                @if ($own == 0)
+                @if (strpos($type,Auth::user()->username) === FALSE)
                     <span class="pull-right">
                         @if (!$podcast->creator)
                             @if ($podcast->isSubscribed)

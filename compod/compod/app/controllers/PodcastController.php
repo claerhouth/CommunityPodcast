@@ -4,7 +4,7 @@ class PodcastController extends BaseController {
     
     public function showAllPodcast()
     {
-	$podcasts = DB::select("select
+	$podcasts = DB::select('select
 			        p.id,
 				p.name,
 				p.description,
@@ -12,14 +12,40 @@ class PodcastController extends BaseController {
 				IF(up.id IS NULL, 0, 1) isSubscribed,
 				up.creator
 				from podcasts p
-				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1");
-	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => ""));
+				left join user_podcast up on up.podcast = p.id and up.user = '.Auth::user()->id.'  and up.active = 1');
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "type" => "all", "search" => ""));
+    }
+    public function showAbcPodcast()
+    {
+	$podcasts = DB::select('select
+			        p.id,
+				p.name,
+				p.description,
+				p.iconFile,
+				IF(up.id IS NULL, 0, 1) isSubscribed,
+				up.creator
+				from podcasts p
+				left join user_podcast up on up.podcast = p.id and up.user = '.Auth::user()->id.'  and up.active = 1 ORDER BY p.name ASC');
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "type" => "alfabetical list of", "search" => ""));
+    }
+    public function showZyxPodcast()
+    {
+	$podcasts = DB::select('select
+			        p.id,
+				p.name,
+				p.description,
+				p.iconFile,
+				IF(up.id IS NULL, 0, 1) isSubscribed,
+				up.creator
+				from podcasts p
+				left join user_podcast up on up.podcast = p.id and up.user = '.Auth::user()->id.'  and up.active = 1 ORDER BY p.name DESC');
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "type" => "alfabetical list of", "search" => ""));
     }
     
     public function showMyPodcast()
     {
 	$podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.creator = 1 AND up.user = '.Auth::user()->id);
-	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "own" => 1, "search" => ""));
+	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "type" => Auth::user()->username."'s", "search" => ""));
     }
     
     public function insertPodcast(){

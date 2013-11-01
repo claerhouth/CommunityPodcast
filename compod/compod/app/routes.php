@@ -57,6 +57,8 @@ Route::post('addPodcast', 'PodcastController@insertPodcast');
 Route::get('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@showPodcastDetail'));
 Route::post('searchpodcast', array('before' => 'auth', 'uses' =>'PodcastController@searchPodcast'));
 Route::post('podcast/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@saveSkills'));
+Route::get('abcpodcastoverview', array('before' => 'auth', 'uses' =>'PodcastController@showAbcPodcast'));
+Route::get('zyxpodcastoverview', array('before' => 'auth', 'uses' =>'PodcastController@showZyxPodcast'));
 
 //EPISODES
 Route::get('recentoverview', array('before' => 'auth', 'uses' =>'EpisodeController@showRecentEpisodes'));
