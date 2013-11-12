@@ -33,7 +33,7 @@
                     <li class="list-group-item">
                       {{ Form::submit('Save', array('class' => 'btn btn-default btn-xs')) }}
                     </li>
-                    {{ Form::hidden('podcastId',$podcast->id)}}
+                    {{ Form::hidden('podcastId',$podcast->podcast_id)}}
                   {{ Form::close() }}
             </ul>
     </div>
@@ -46,7 +46,7 @@
   <div>It appears there currently aren't any episodes for this podcast.</div>
   <div>
           Why don't you start things up and
-          <a href="/compod/compod/server.php/addEpisode/{{$podcast->id}}"><button type="button" class="btn btn-primary btn-xs">Upload an episode</button></a>  
+          <a href="/compod/compod/server.php/addEpisode/{{$podcast->podcast_id}}"><button type="button" class="btn btn-primary btn-xs">Upload an episode</button></a>  
   </div>
 </div>
 
@@ -76,7 +76,7 @@
   </div>
 </div>
 <div class="col-md-2">
-  <a href="/compod/compod/server.php/addEpisode/{{$podcast->id}}"><button type="button" class="btn btn-primary">Upload an episode</button></a>  
+  <a href="/compod/compod/server.php/addEpisode/{{$podcast->podcast_id}}"><button type="button" class="btn btn-primary">Upload an episode</button></a>  
 </div>
 @endif
 

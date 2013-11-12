@@ -51,17 +51,19 @@
     @foreach($episodes as $episode)
     <li class="list-group-item" style="min-height:84px; margin-top:10px;">
         <div class="col-md-1">
-            <a href="/compod/compod/server.php/episode/{{$episode->episode_id}}">
-                <img class="media-object" src="../public/img/episodelogos/{{ $episode->episode_icon }}" alt="Episode icon" width="64" height="64">
+            <a href="/compod/compod/server.php/episode/{{$episode->id}}">
+                <img class="media-object" src="../public/img/episodelogos/{{ $episode->iconFile }}" alt="Episode icon" width="64" height="64">
             </a>
         </div>
         <div>
-            <span class="pull-right"><a href="/compod/compod/server.php/podcast/{{$episode->podcast_id}}">{{$episode->podcast_name}}</a></span>
-            <a href="/compod/compod/server.php/episode/{{$episode->episode_id}}"><b>{{$episode->episode_title}}</b></a><br><em>{{$episode->episode_date}}</em><br>
-            <p><em>{{$episode->episode_desc}}</em></p>
+                <span class="pull-right"><a href="/compod/compod/server.php/podcast/{{$episode->podcast->podcast_id}}">{{$episode->podcast->name}}</a></span> 
+                <a href="/compod/compod/server.php/episode/{{$episode->id}}"><b>{{$episode->title}}</b></a><br><em>{{$episode->publishdate}}</em><br>
+                <p><em>{{$episode->description}}</em></p>    
+            
         </div>
     </li>
   @endforeach
+  <?php echo $episodes->links() ?>
 </ul>
 @stop
     

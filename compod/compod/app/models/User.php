@@ -49,6 +49,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 	
+	public function podcasts()
+	{
+		return $this->belongsToMany('Podcast', 'user_podcast', 'user', 'podcast');
+	}
+	
 	public function skills()
 	{
 		return $this->belongsToMany('Skill', 'user_skill', 'user', 'skill')->withPivot('active');

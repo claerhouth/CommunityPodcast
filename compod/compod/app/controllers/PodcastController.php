@@ -4,47 +4,34 @@ class PodcastController extends BaseController {
     
     public function showAllPodcast()
     {
-	$podcasts = DB::select('select
-			        p.id,
-				p.name,
-				p.description,
-				p.iconFile,
-				IF(up.id IS NULL, 0, 1) isSubscribed,
-				up.creator
-				from podcasts p
-				left join user_podcast up on up.podcast = p.id and up.user = '.Auth::user()->id.'  and up.active = 1');
+	//$podcasts = DB::select('select
+	//		        p.podcast_id,
+	//			p.name,
+	//			p.description,
+	//			p.iconFile,
+	//			IF(up.id IS NULL, 0, 1) isSubscribed,
+	//			up.creator
+	//			from podcasts p
+	//			left join user_podcast up on up.podcast = p.podcast_id and up.user = '.Auth::user()->id.'  and up.active = 1');
+	
+	$podcasts = Podcast::all();
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "type" => "all", "search" => ""));
     }
     public function showAbcPodcast()
     {
-	$podcasts = DB::select('select
-			        p.id,
-				p.name,
-				p.description,
-				p.iconFile,
-				IF(up.id IS NULL, 0, 1) isSubscribed,
-				up.creator
-				from podcasts p
-				left join user_podcast up on up.podcast = p.id and up.user = '.Auth::user()->id.'  and up.active = 1 ORDER BY p.name ASC');
+	$podcasts = Podcast::orderBy('name')->get();
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "type" => "alfabetical list of", "search" => ""));
     }
     public function showZyxPodcast()
     {
-	$podcasts = DB::select('select
-			        p.id,
-				p.name,
-				p.description,
-				p.iconFile,
-				IF(up.id IS NULL, 0, 1) isSubscribed,
-				up.creator
-				from podcasts p
-				left join user_podcast up on up.podcast = p.id and up.user = '.Auth::user()->id.'  and up.active = 1 ORDER BY p.name DESC');
+	$podcasts = Podcast::orderBy('name', 'DESC')->get();
 	return View::make('podcastOverview',array("podcasts" => $podcasts, "type" => "alfabetical list of", "search" => ""));
     }
     
     public function showMyPodcast()
     {
-	$podcasts = DB::select('select p.* from podcasts p JOIN user_podcast up ON up.podcast = p.id  WHERE up.creator = 1 AND up.user = '.Auth::user()->id);
+	$podcasts = User::find(Auth::user()->id)->podcasts()->where('user_podcast.creator' ,'==','1')->get();
+	
 	return View::make('podcastOverview' ,array("podcasts" => $podcasts, "type" => Auth::user()->username."'s", "search" => ""));
     }
     
@@ -114,8 +101,8 @@ class PodcastController extends BaseController {
     }
     
     public function showPodcastDetail($id){
-	$podcastDetail = DB::select("select p.*, u.username podcast_creator from podcasts p join user_podcast up on up.podcast = p.id join users u on u.id = up.user  where p.id =".$id);
-	$episodes = DB::select("select * from episodes where podcast=".$id.' ORDER by publishdate DESC');
+	$podcastDetail = DB::select("select p.*, u.username podcast_creator from podcasts p join user_podcast up on up.podcast = p.podcast_id join users u on u.id = up.user  where p.podcast_id =".$id);
+	$episodes = DB::select("select * from episodes where podcast_id=".$id.' ORDER by publishdate DESC');
 	$podcastSkills = $this->getUserSkills($id);
 	
 	return View::make('podcast',array('podcast' => $podcastDetail[0], 'episodes' => $episodes, 'skills' => $podcastSkills));
@@ -125,16 +112,17 @@ class PodcastController extends BaseController {
 	$search = Input::get('search');
 	
 	$podcasts = DB::select("select
-			        p.id,
+			        p.podcast_id,
 				p.name,
 				p.description,
+				p.iconFile,
 				IF(up.id IS NULL, 0, 1) isSubscribed,
 				up.creator
 				from podcasts p
-				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1
+				left join user_podcast up on up.podcast = p.podcast_id and up.user = ".Auth::user()->id."  and up.active = 1
 				WHERE (p.name like '%".$search."%' OR p.description like '%".$search."%')");
 	
-	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => $search));
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => $search, "type" => "alfabetical list of"));
     }
     
     public function getUserSkills($podcast_id){

@@ -3,14 +3,14 @@
 class EpisodeController extends BaseController {
     public function showAllEpisodes()
     {
-	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate DESC');	
+	$episodes = Episode::paginate(5);
 	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "all"));
     }
     
     //alle episode views van de episode paginas
     public function showRecentEpisodes()
     {
-	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate DESC LIMIT 25');
+	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon ,p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast ORDER BY publishdate DESC')->paginate(5);
 	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => "recent"));
     }
     public function showOldEpisodes()
@@ -76,8 +76,8 @@ class EpisodeController extends BaseController {
     
     public function addEpisode($podcast_id)
     {
-	$podcast = DB::select('select * from podcasts where id = '.$podcast_id);
-	return View::make('addEpisode', array("podcast" => $podcast[0]));
+	$podcast = Podcast::find($podcast_id);				 
+	return View::make('addEpisode', array("podcast" => $podcast));
     }
     
     public function insertEpisode(){

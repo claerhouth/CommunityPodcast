@@ -49,7 +49,7 @@
     @foreach($podcasts as $podcast)
         <li class="list-group-item" style="min-height:84px; margin-top:10px;">
             <div class="col-md-1">
-                <a href="/compod/compod/server.php/podcast/{{$podcast->id}}">
+                <a href="/compod/compod/server.php/podcast/{{$podcast->podcast_id}}">
                     <img class="media-object" src="../public/img/podcastlogos/{{ $podcast->iconFile }}" alt="Podcast icon" width="64" height="64">
                 </a>
             </div>
@@ -57,17 +57,17 @@
                 @if (strpos($type,Auth::user()->username) === FALSE)
                     <span class="pull-right">
                         @if (!$podcast->creator)
-                            @if ($podcast->isSubscribed)
-                                <a href="/compod/compod/server.php/unsubscribe/{{$podcast->id}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button></a>
+                            @if ($podcast->isSubscribed())
+                                <a href="/compod/compod/server.php/unsubscribe/{{$podcast->podcast_id}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button></a>
                             @else
-                                <a href="/compod/compod/server.php/subscribe/{{$podcast->id}}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></button></a>
+                                <a href="/compod/compod/server.php/subscribe/{{$podcast->podcast_id}}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></button></a>
                             @endif
                         @else
                             <p class="text-info">creator</p>
                         @endif
                     </span>
                 @endif
-                <a href="/compod/compod/server.php/podcast/{{$podcast->id}}"><b>{{$podcast->name}}</b></a><br/>
+                <a href="/compod/compod/server.php/podcast/{{$podcast->podcast_id}}"><b>{{$podcast->name}}</b></a><br/>
                 <em>{{$podcast->description}}</em>
             </div>
         </li>    
