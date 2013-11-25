@@ -51,8 +51,6 @@ class EpisodeController extends BaseController {
 	return View::make('episodeOverview' ,array("episodes" => $episodes, "type" => Auth::user()->username."'s reverse alfabetical list of"));
     }
     
-    
-    
     public function showMyEpisodes()
     {
 	$episodes = DB::select('select date(e.publishdate) episode_date, e.id episode_id, e.title episode_title, e.description episode_desc, e.iconFile episode_icon , p.name podcast_name, p.id podcast_id from episodes e JOIN podcasts p ON p.id = e.podcast JOIN creator c ON c.episode = e.id WHERE c.user = '.Auth::user()->id.' ORDER BY publishdate DESC');	

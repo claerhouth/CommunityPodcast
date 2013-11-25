@@ -49,6 +49,7 @@ Route::get('user', array('before' => 'auth', 'uses' => 'UserController@showMyUse
 
 
 //PODCASTS
+Route::get('testinsert', array('before' => 'auth', 'uses' =>'PodcastController@testInsert'));
 Route::get('podcastoverview', array('before' => 'auth', 'uses' =>'PodcastController@showAllPodcast'));
 Route::get('podcastoverviewforuser', array('before' => 'auth', 'uses' =>'PodcastController@showMyPodcast'));
 Route::get('subscribe/{id?}', array('before' => 'auth', 'uses' =>'PodcastController@subscribe'));

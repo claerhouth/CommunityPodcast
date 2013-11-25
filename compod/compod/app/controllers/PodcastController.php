@@ -2,6 +2,10 @@
 
 class PodcastController extends BaseController {
     
+    public function testInsert(){
+	return Podcast::createPodcast("testname", "testdescription", 1, "default.png");
+    }
+    
     public function showAllPodcast()
     {
 	//$podcasts = DB::select('select
@@ -54,16 +58,18 @@ class PodcastController extends BaseController {
 	    }    
 	}
 	
-	$podcastId = DB::table('podcasts')->insertGetId(array(
+	/*$podcastId = DB::table('podcasts')->insertGetId(array(
 	    'name'  => Input::get('name'),
 	    'description'  => Input::get('description'),
 	    'inviteOnly'    => 1,
 	    'iconFile' => $iconFile
-	));
+	));*/
+	
+	$insertedPodcast = Podcast::createPodcast(Input::get('name'), Input::get('description'), 1,  $iconFile);
 	
 	DB::table('user_podcast')->insert(array(
 	    'user'  => Auth::user()->id,
-	    'podcast' => $podcastId,
+	    'podcast' => $insertedPodcast->podcast_id,
 	    'creator' => 1
 	));
 	

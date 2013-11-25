@@ -5,6 +5,19 @@ class Podcast extends Eloquent
     protected $table = 'podcasts';
     protected $primaryKey = 'podcast_id';
     
+    public static function createPodcast($name, $description, $inviteOnly,$iconFile ){
+	$podcast = new Podcast;
+
+	$podcast->name = $name;
+	$podcast->description = $description;
+	$podcast->inviteOnly = $inviteOnly;
+	$podcast->iconFile = $iconFile;
+	
+	$podcast->save();
+	
+	return $podcast;
+    }
+    
     public function episodes()
     {
             return $this->hasMany('Episode', 'podcast_id');
