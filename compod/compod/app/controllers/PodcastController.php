@@ -129,12 +129,13 @@ class PodcastController extends BaseController {
 				p.name,
 				p.description,
 				IF(up.id IS NULL, 0, 1) isSubscribed,
-				up.creator
+				up.creator,
+				p.iconFile
 				from podcasts p
 				left join user_podcast up on up.podcast = p.id and up.user = ".Auth::user()->id."  and up.active = 1
 				WHERE (p.name like '%".$search."%' OR p.description like '%".$search."%')");
 	
-	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "search" => $search));
+	return View::make('podcastOverview',array("podcasts" => $podcasts, "own" => 0, "type" => "search", "search" => $search));
     }
     
     public function getUserSkills($podcast_id){
